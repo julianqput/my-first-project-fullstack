@@ -1,0 +1,33 @@
+/* Esto pone el texto de TODOS los párrafos en color gris */
+p {
+  color: grey;
+}
+
+/* Esto aplica a todo el contenido de la página */
+body {
+  background-color: #f4f4f4; /* Un gris muy claro */
+}
+
+.destacado {
+  background-color: yellow;
+  font-weight: bold;
+}
+#logo-principal {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e88e5; /* Un tono de azul */
+  margin-bottom:
+   10px; /* Para separarlo del título de abajo */
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mi-caja {
+  padding: 20px; /* 20px de relleno en los 4 lados */
+  border: 2px solid black; /* Un borde sólido negro de 2px */
+  margin: 40px; /* 40px de margen en los 4 lados para separarlo de otros */
+}
+
+* {
+  box-sizing: border-box;
+}
