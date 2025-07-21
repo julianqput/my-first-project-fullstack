@@ -7,20 +7,26 @@ p {
 body {
   background-color: #f4f4f4; /* Un gris muy claro */
 }
-
+body {
+  font-family: Arial, sans-serif;
+}
 .destacado {
-  background-color: yellow;
-  font-weight: bold;
+  background-color: #fffde7; /* Un fondo amarillo muy pálido */
+  border-left: 4px solid #fbc02d; /* Un borde izquierdo amarillo */
+  padding: 10px; /* Relleno para que no se pegue al borde */
+  margin-top: 10px; /* Separación del elemento de arriba */
+  font-style: italic;
 }
 #logo-principal {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
-  color: #1e88e5; /* Un tono de azul */
-  margin-bottom:
-   10px; /* Para separarlo del título de abajo */
+  color: #64b5f6; /* Un azul claro */
+  margin-bottom: 10px;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; /* Fuente para toda la página */
+  background-color: #f4f4f4; /* Un fondo gris claro */
+  color: #333; /* Color de texto principal oscuro */
 }
 .mi-caja {
   padding: 20px; /* 20px de relleno en los 4 lados */
@@ -30,4 +36,43 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+.alerta {
+  color: red;
+}
+
+#encabezado-principal {
+  background-color: #333;
+}
+
+h1 {
+  color: white;
+  background-color: navy;
+}
+
+article {
+  background-color: white;
+  margin: 20px; /* Margen para separar el artículo del resto */
+  padding: 20px; /* Relleno interno del artículo */
+  border: 1px solid #ddd; /* Un borde sutil */
+}
+
+header, footer {
+  background-color: #333; /* Fondo oscuro para cabecera y pie */
+  color: white; /* Texto blanco */
+  padding: 20px; /* Relleno interno */
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box; /* El cálculo de caja más intuitivo */
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  text-align: justify;
 }
