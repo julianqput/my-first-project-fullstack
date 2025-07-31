@@ -5,13 +5,12 @@ body{
 
 .flex-container{
     border: 1px solid black;
-    background: #ccc;
     padding: 20px;
     display: flex;
     /*flex-direction: row;*/
     /*flex-wrap: wrap; sirve para acomodar los contenedores*/
     flex-flow: row wrap;/*sirve como las dos oopciones anteriores pero solo en una linea*/
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
     /*justify-content: space-between; /* sirve para centrar y que halla un espacio entre ellos*/
     /*align-items: flex-start;*/
@@ -23,21 +22,6 @@ body{
 
 }
 
-.c5{
-    background:lightblue;
-}
-
-.c6{
-    background:lightcoral;
-}
-
-.c7{
-    background:lightgreen;
-}
-
-.c8{
-    background: lightgray   ;
-}
 
 .box{
     border: 1px solid rgb(70, 69, 69);
@@ -45,10 +29,36 @@ body{
     color: black;      /*define el color de la letra*/
     font-family: 'Courier New', Courier, monospace;  /*Estilo de letra*/
     font-weight: bold;          
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     line-height: 120px; 
     text-align: center; /*Centrar linea de texto verticalmente*/
     margin: 5px;
     overflow: hidden;
 }
+
+.c1{
+    background:lightblue;
+    /*order: 4;Esto permite reordenar las cajas si quiero que en la 4 este la 1*/
+    flex-grow: 1; /*estp permnite la prioridad de tamaño en las cajas mayor numero mas grande*/
+}
+
+.c2{
+    background:lightcoral;
+    /*order 3;Esto permite reordenar las cajas si quiero que en la 4 este la 1*/
+    flex-grow: 5; /*estp permnite la prioridad de tamaño en las cajas mayor numero mas grande*/
+}
+
+.c3{
+    background:lightgreen;
+    /*order 2; Esto permite reordenar las cajas si quiero que en la 4 este la 1*/
+    flex-grow: 3; /*estp permnite la prioridad de tamaño en las cajas mayor numero mas grande*/
+}
+
+.c4{
+    background: lightgray;
+    /*order: 1; Esto permite reordenar las cajas si quiero que en la 4 este la 1*/
+    flex-grow: 2; /*estp permnite la prioridad de tamaño en las cajas mayor numero mas grande*/
+}
+
+
