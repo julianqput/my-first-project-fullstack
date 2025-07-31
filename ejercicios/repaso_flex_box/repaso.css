@@ -1,0 +1,54 @@
+body{
+    background-color: beige;
+    font-family: arial,sans-serif;
+}
+
+.flex-container{
+    border: 1px solid black;
+    background: #ccc;
+    padding: 20px;
+    display: flex;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap; sirve para acomodar los contenedores*/
+    flex-flow: row wrap;/*sirve como las dos oopciones anteriores pero solo en una linea*/
+    justify-content: flex-start;
+    align-content: center;
+    /*justify-content: space-between; /* sirve para centrar y que halla un espacio entre ellos*/
+    /*align-items: flex-start;*/
+    /*justify-content: space-around; permite que halla el mismo espacion entre los elementos*/
+    /*justify-content: center;centra todo*/
+    width: 80%;
+    height: 600px;
+    margin: 0 auto;
+
+}
+
+.c5{
+    background:lightblue;
+}
+
+.c6{
+    background:lightcoral;
+}
+
+.c7{
+    background:lightgreen;
+}
+
+.c8{
+    background: lightgray   ;
+}
+
+.box{
+    border: 1px solid rgb(70, 69, 69);
+    background-color: white;
+    color: black;      /*define el color de la letra*/
+    font-family: 'Courier New', Courier, monospace;  /*Estilo de letra*/
+    font-weight: bold;          
+    width: 120px;
+    height: 120px;
+    line-height: 120px; 
+    text-align: center; /*Centrar linea de texto verticalmente*/
+    margin: 5px;
+    overflow: hidden;
+}

@@ -4,9 +4,12 @@
     border: 1px solid black;
 
     display: flex;
-    flex-wrap: wrap-reverse;
+    flex-flow: row wrap;
 
-}
+    align-items: stretch;
+
+    height: 500px;
+}   
 
 .box{
     border: 3px solid black;
