@@ -46,6 +46,5 @@ body{
     grid-column: 2/4;/*Permite que la caja ocupe cierto espacion segun las columnas que existan*/
 }
 .c12{
-    grid-column: 1/4;/*Permite que la caja ocupe cierto espacion segun las columnas que existan*/   
-
+    grid-column: 1/ span 3;/*Permite que la caja ocupe cierto espacion segun las columnas que existan*/   
 }
