@@ -1,21 +1,27 @@
+/* ==========================================================================
+   1. RESET Y ESTILOS GLOBALES
+   ========================================================================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f8f9fa; /* Un fondo gris claro y moderno */
-  color: #212529; /* Color de texto principal oscuro para buena legibilidad */
-  line-height: 1.6; /* Espacio entre líneas que mejora la lectura */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-header, footer {
-  background-color: #343a40; /* Un gris oscuro para la cabecera y el pie */
-  color: white;
-  padding: 20px;
-  text-align: center;
+/* ==========================================================================
+   2. LAYOUT PRINCIPAL Y CABECERA
+   ========================================================================== */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 #logo-principal img {
@@ -25,64 +31,83 @@ header, footer {
 }
 
 main {
-  max-width: 800px; /* Limita el ancho del contenido principal para mejor lectura */
-  margin: 20px auto; /* Centra el contenido principal en la página */
-  padding: 0 15px; /* Añade un poco de espacio a los lados en móviles */
+    max-width: 900px;
+    margin: 30px auto; /* Centra el contenido principal */
+    padding: 0 20px;
 }
 
-.navegacion-principal ul {
-  list-style-type: none; /* Quita los puntos de la lista */
-}
+/* ==========================================================================
+   3. COMPONENTES Y SECCIONES
+   ========================================================================== */
 
-.navegacion-principal li {
-  display: inline-block; /* Pone los elementos en línea */
-  margin: 0 15px; /* Espacio entre los elementos del menú */
-}
-
-.navegacion-principal a {
-  text-decoration: none; /* Quita el subrayado de los enlaces */
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s; /* Transición suave para el hover */
-}
-
-.navegacion-principal a:hover {
-  background-color: #495057; /* Cambia el fondo al pasar el mouse */
-}
-
+/* --- Estilos para los artículos del blog --- */
 .post {
-  background-color: white;
-  border: 1px solid #dee2e6; /* Borde sutil */
-  border-radius: 8px; /* Esquinas redondeadas */
-  margin-bottom: 25px; /* Espacio entre los posts */
-  padding: 25px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra muy suave */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 25px;
 }
 
 .post h2 {
-  margin-bottom: 10px;
-  font-size: 1.75rem; /* Tamaño de fuente relativo y accesible */
-  color: #343a40;
-}
-
-.post p {
-    color: #6c757d; /* Un gris más suave para el texto de los párrafos */
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .destacado {
-  background-color: #fffde7;
-  border-left: 4px solid #fbc02d;
-  padding: 15px;
-  margin-top: 15px;
-  font-style: italic;
-  color: #5c5c5c; /* Un color un poco más oscuro para el texto destacado */
+    background-color: #eef7ff;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    margin: 20px 0;
 }
 
-#logo-principal {
-  font-size: 24px;
-  font-weight: bold;
-  color: #64b5f6;
-  margin-bottom: 15px;
+/* --- ESTILOS PARA LAS IMÁGENES --- */
+.imagen-articulo {
+    /* MODELO DE CAJA: La base para el tamaño y la apariencia de la imagen */
+    width: 100%; /* Hace que la imagen sea responsiva y ocupe el 100% de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen al cambiar el ancho */
+    margin-top: 20px; /* Espacio para separarla del texto de arriba */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border: 3px solid #eee; /* Un borde sutil */
 }
 
+/* --- Organización de los Tipos de Carbohidratos --- */
+.tipos-carbohidratos {
+    /* CSS GRID: La mejor herramienta para crear una rejilla de 2 dimensiones.
+       Aquí creamos una rejilla con 3 columnas iguales y flexibles (1fr).
+       Grid es perfecto para el layout general de una sección con múltiples elementos. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+}
+
+.tipo-card {
+    /* MODELO DE CAJA: Define la apariencia de cada tarjeta individual */
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    
+    /* FLEXBOX: Ideal para alinear el contenido DENTRO de cada tarjeta.
+       Aquí lo usamos para organizar el título, párrafo e imagen en una columna
+       y para que ocupen todo el alto de la tarjeta. */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio verticalmente */
+}
+
+.tipo-card h4 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+/* ==========================================================================
+   4. PIE DE PÁGINA
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
