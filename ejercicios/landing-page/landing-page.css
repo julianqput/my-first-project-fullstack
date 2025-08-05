@@ -28,10 +28,35 @@ header {
     text-align: center;
 }
 
-#logo-principal img {
-    /* MODELO DE CAJA: Usamos 'width' para controlar el tamaño directo del logo */
+#logo-principal  {
+     /* MODELO DE CAJA: Le damos un fondo blanco para crear el recuadro. */
+    background-color: white;
+
+    /* MODELO DE CAJA: Añadimos un relleno (padding) para crear espacio
+       entre la imagen y el borde del recuadro blanco. */
+    padding: 15px;
+
+    /* Para que el recuadro no ocupe todo el ancho, lo convertimos en un
+       bloque en línea. Así se ajustará al tamaño de la imagen + el padding. */
+    display: inline-block; 
+
+    /* MODELO DE CAJA: Añadimos un margen inferior para separar el recuadro
+       del título que está debajo. */
+    margin-bottom: 20px;
+
+    /* Estilos extra para un look más profesional */
+    border-radius: 12px; /* Esquinas redondeadas para el recuadro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+}
+
+#logo-principal img{
+    
+    /* MODELO DE CAJA: Controlamos el tamaño de la imagen en sí. */
     width: 80px;
-    margin-bottom: 10px;
+
+    /* Esto elimina un pequeño espacio fantasma que a veces aparece debajo de las imágenes. */
+    display: block; 
+}
 }
 
 main {
@@ -108,19 +133,29 @@ main {
    
 }
 
+.tipos-carbohidratos h3{
+    /* Esta regla le dice al h3 que empiece en la primera línea de la
+       columna (1) y termine en la última (-1), ocupando así todo el
+       espacio horizontal disponible. */
+    grid-column: 1 / -1;
+    text-align: center; /* Centramos el título para que se vea mejor */
+    margin-bottom: 10px; /* Le damos un poco de espacio debajo */
+}
+
 .tipo-card {
     /* MODELO DE CAJA: Define la apariencia de cada tarjeta individual */
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     
     /* FLEXBOX: Ideal para alinear el contenido DENTRO de cada tarjeta.
        Aquí lo usamos para organizar el título, párrafo e imagen en una columna
        y para que ocupen todo el alto de la tarjeta. */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribuye el espacio verticalmente */
+    
+    justify-content: flex-start; /* Distribuye el espacio verticalmente */
 }
 
 .tipo-card h4 {
