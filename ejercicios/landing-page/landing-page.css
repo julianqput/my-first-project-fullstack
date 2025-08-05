@@ -57,7 +57,6 @@ header {
     /* Esto elimina un pequeño espacio fantasma que a veces aparece debajo de las imágenes. */
     display: block; 
 }
-}
 
 main {
     max-width: 900px;
@@ -171,4 +170,33 @@ footer {
     padding: 20px;
     background-color: #333;
     color: white;
+}
+
+/* ==========================================================================
+   5. ESTILOS RESPONSIVE (PARA MÓVILES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* Hacemos que la rejilla de tarjetas sea de 1 sola columna */
+    .tipos-carbohidratos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hacemos que los elementos del menú se apilen verticalmente */
+    .navegacion-principal li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Reducimos el tamaño del logo en móviles */
+    #logo-principal {
+        padding: 10px;
+    }
+    #logo-principal img {
+        width: 60px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
 }
