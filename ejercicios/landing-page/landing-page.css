@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -36,11 +40,32 @@ main {
     padding: 0 20px;
 }
 
+.navegacion-principal ul {
+  list-style-type: none ;
+}
+
+.navegacion-principal li{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navegacion-principal a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.navegacion-principal a:hover{
+  background-color: #555;
+}
+
 /* ==========================================================================
    3. COMPONENTES Y SECCIONES
    ========================================================================== */
 
 /* --- Estilos para los artículos del blog --- */
+
 .post {
     background-color: white;
     border: 1px solid #ddd;
@@ -80,6 +105,7 @@ main {
     grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
     gap: 20px; /* Espacio entre las tarjetas */
     margin-top: 30px;
+   
 }
 
 .tipo-card {
