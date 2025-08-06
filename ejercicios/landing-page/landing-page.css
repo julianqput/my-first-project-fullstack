@@ -8,7 +8,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /*se utiliza para suvizar saltos de navegacion dentro de la misma pagina*/
 }
 
 body {
