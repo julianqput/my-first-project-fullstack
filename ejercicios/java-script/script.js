@@ -24,7 +24,7 @@ let ganador = null; //null representa la ausencia intencional de un valor. Es co
 
 ////if(si),else if(si no,si),else(si no)
 
-const = 14;
+const hora = 14;
 
 if( hora < 12 ){
     console.log("Buenos dias");
