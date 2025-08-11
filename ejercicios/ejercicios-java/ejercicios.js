@@ -65,6 +65,78 @@ console.log("Se ha vendido 1 teclado Mecanico RGB");
 //console.log("EL nuevo stock es:",stockProducto, "y el nuevo precio del producto es:",precioProducto); Se puede de esta forma pero es la version antigua
 console.log(`El nuevo stock es: ${stockProducto}, y el nuevo precio del producto es: ${precioProducto}`);//Esta es la versioon mas moderna
 
+// ==========================================================================
+//  TEMA 3: Operadores - Manipulando y Comparando Datos
+// ==========================================================================
+// Los operadores son símbolos que realizan acciones sobre nuestras variables.
+
+// --- Operadores Matemáticos ---
+
+let a = 10;
+let b = 5;
+
+console.log("suma:",a+b);
+console.log("resta",a-b);
+console.log("Multiplicación:",a*b);
+console.log("división:",a/b);
+
+
+console.log("\n--- Operadores de Comparación (¡Muy importantes!) ---");
+// Estos operadores SIEMPRE devuelven un resultado booleano: true o false.
+
+let edadAna = 25;
+let edadJuan = 30;
+
+console.log("¿Ana es mayor que Juan: ",edadAna>edadJuan);  // false
+console.log("¿Juan tiene 30 años?",edadJuan==30);  // true (=== significa "estrictamente igual a")
+console.log("¿Tienen edades diferentes?",edadAna!==edadJuan); // true (!== significa "estrictamente diferente a")
+
+
+// ==========================================================================
+console.log ("\nTEMA 4: Condicionales (if/else) - Tomando Decisiones");
+// ==========================================================================
+// Los condicionales nos permiten ejecutar diferentes bloques de código
+// dependiendo de si una condición es verdadera (true) o falsa (false).
+
+console.log("---Ejemplo de condicional---");
+const temperatura = 22;
+
+if("temperatura > 25"){
+    console.log("Hace calor, ¡Ponte ropa ligera!");
+}else{
+    console.log("El clima esta agradable, pero lleva una chaqueta por si acaso.");
+}
+
+// ==========================================================================
+//  ¡TUS NUEVOS EJERCICIOS!
+// ==========================================================================
+
+// --- Ejercicio 3: Calculadora de Presupuesto para Viaje ---
+// 1. Crea una constante `costoVuelo` y asígnale un valor de 500.
+// 2. Crea una constante `costoHotelPorNoche` y asígnale un valor de 80.
+// 3. Crea una constante `numeroDeNoches` y asígnale un valor de 4.
+// 4. Crea una variable `presupuesto` (usa 'let') y asígnale un valor de 800.
+// 5. Calcula el costo total del viaje (vuelo + el costo total del hotel por todas las noches). Guarda el resultado en una nueva constante `costoTotal`.
+// 6. Compara si tu `presupuesto` es suficiente para cubrir el `costoTotal`. Guarda el resultado (true o false) en una constante `presupuestoAlcanza`.
+// 7. Muestra el `costoTotal` y si el `presupuestoAlcanza` en la consola.
+
+console.log("\n---Ejercicio 3: Presupuesto de viaje---");
+
+const costoVuelo = 500;
+const costoHotelPorNoche = 80;
+const numeroDeNoches = 4;
+let presupuesto = 800;
+const costoTotal = costoVuelo + costoHotelPorNoche * numeroDeNoches;
+const presupuestoAlcanza = costoTotal<presupuesto;
+
+console.log("El presupuesto alcanza?",presupuestoAlcanza); //false
+
+
+if(costoTotal<=presupuesto){
+    console.log("El presupuesto alcanzo: ");
+}else{
+    console.log("El presupuesto no alcanza");
+}
 
 
 
