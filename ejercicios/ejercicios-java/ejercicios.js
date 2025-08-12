@@ -138,5 +138,23 @@ if(costoTotal<=presupuesto){
     console.log("El presupuesto no alcanza");
 }
 
+// --- Ejercicio 4: Verificador de Acceso a un Evento ---
+// 1. Crea una constante `edadPersona` y asígnale un valor (prueba con 17 y luego con 20).
+// 2. Crea una constante `tieneEntrada` y asígnale `true`.
+// 3. Usa un condicional `if/else` para verificar si la persona puede entrar al evento.
+//    La condición es que la persona debe ser mayor o igual a 18 AÑOS Y debe tener una entrada.
+//    (Pista: para "Y", se usa el operador lógico `&&`).
+// 4. Si puede entrar, muestra en la consola: "Bienvenido al evento."
+// 5. Si no puede entrar, muestra: "Acceso denegado."
 
+console.log("\n---Ejercicio 4: acceso al evento---");
+
+const edadPersona = 20;
+const tieneEntrada = true;
+
+if(edadPersona>=18 && tieneEntrada == true){
+    console.log("Bienvenido al evento.");
+}else{
+    console.log("Acceso denegado.");
+}
 
