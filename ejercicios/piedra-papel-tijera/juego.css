@@ -3,10 +3,114 @@
     margin: 0;
     padding: 0;
 }
+html {
+  scroll-behavior: smooth; /*se utiliza para suvizar saltos de navegacion dentro de la misma pagina*/
+}
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. LAYOUT PRINCIPAL Y CABECERA
+   ========================================================================== */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#logo-principal  {
+     /* MODELO DE CAJA: Le damos un fondo blanco para crear el recuadro. */
+    background-color: white;
+
+    /* MODELO DE CAJA: Añadimos un relleno (padding) para crear espacio
+       entre la imagen y el borde del recuadro blanco. */
+    padding: 15px;
+
+    /* Para que el recuadro no ocupe todo el ancho, lo convertimos en un
+       bloque en línea. Así se ajustará al tamaño de la imagen + el padding. */
+    display: inline-block; 
+
+    /* MODELO DE CAJA: Añadimos un margen inferior para separar el recuadro
+       del título que está debajo. */
+    margin-bottom: 20px;
+
+    /* Estilos extra para un look más profesional */
+    border-radius: 12px; /* Esquinas redondeadas para el recuadro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+
+     /* --- AQUÍ APLICAMOS LA ANIMACIÓN --- */
+    animation: bounce 2s ease-in-out infinite;
+}
+
+#logo-principal img{
+    
+    /* MODELO DE CAJA: Controlamos el tamaño de la imagen en sí. */
+    width: 80px;
+
+    /* Esto elimina un pequeño espacio fantasma que a veces aparece debajo de las imágenes. */
+    display: block;
+    
+    /* --- MODIFICACIÓN CLAVE --- */
+    /* Esta es la forma profesional de centrar un elemento de bloque.
+       'auto' en los márgenes izquierdo y derecho le dice al navegador
+       que calcule el espacio sobrante y lo distribuya por igual a cada lado. */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main{
+    max-width: 900px;
+    margin: 30px auto; /* Centra el contenido principal */
+    padding: 0 20px;
+}
+
+.navegacion-principal ul {
+  list-style-type: none ;
+}
+
+.navegacion-principal li{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navegacion-principal a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.navegacion-principal a:hover{
+  background-color: #555;
+}
+
+.imagen-articulo {
+    /* MODELO DE CAJA: La base para el tamaño y la apariencia de la imagen */
+    width: 100%; /* Hace que la imagen sea responsiva y ocupe el 100% de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen al cambiar el ancho */
+    margin-top: 20px; /* Espacio para separarla del texto de arriba */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border: 3px solid #eee; /* Un borde sutil */
+}
+
+/* ==========================================================================
+   5. DEFINICIÓN DE LA ANIMACIÓN (KEYFRAMES)
+   ========================================================================== */
+
+/* Aquí creamos la animación llamada "bounce" (rebotar) */
+@keyframes bounce {
+  /* Al principio (0%) y al final (100%) de la animación, el logo está en su posición normal. */
+  0%, 100% {
+    transform: translateY(0);
+  }
+  /* A la mitad (50%) de la animación, el logo se mueve 8 píxeles hacia arriba. */
+  50% {
+    transform: translateY(-8px);
+  }
 }
