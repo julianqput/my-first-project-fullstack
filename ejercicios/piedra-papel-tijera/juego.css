@@ -89,6 +89,31 @@ main{
 .navegacion-principal a:hover{
   background-color: #555;
 }
+/* ==========================================================================
+   3. COMPONENTES Y SECCIONES
+   ========================================================================== */
+
+/* --- Estilos para los artículos del blog --- */
+
+.post {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 25px;
+}
+
+.post h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.destacado {
+    background-color: #eef7ff;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    margin: 20px 0;
+}
 
 .imagen-articulo {
     /* MODELO DE CAJA: La base para el tamaño y la apariencia de la imagen */
@@ -97,6 +122,58 @@ main{
     margin-top: 20px; /* Espacio para separarla del texto de arriba */
     border-radius: 8px; /* Esquinas redondeadas */
     border: 3px solid #eee; /* Un borde sutil */
+}
+
+/* --- ESTILOS PARA LAS IMÁGENES --- */
+.imagen-articulo {
+    /* MODELO DE CAJA: La base para el tamaño y la apariencia de la imagen */
+    width: 100%; /* Hace que la imagen sea responsiva y ocupe el 100% de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen al cambiar el ancho */
+    margin-top: 20px; /* Espacio para separarla del texto de arriba */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border: 3px solid #eee; /* Un borde sutil */
+}
+
+/* --- Organización de los Tipos de Carbohidratos --- */
+.detalles {
+    /* CSS GRID: La mejor herramienta para crear una rejilla de 2 dimensiones.
+       Aquí creamos una rejilla con 3 columnas iguales y flexibles (1fr).
+       Grid es perfecto para el layout general de una sección con múltiples elementos. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+   
+}
+
+.detalles h3{
+    /* Esta regla le dice al h3 que empiece en la primera línea de la
+       columna (1) y termine en la última (-1), ocupando así todo el
+       espacio horizontal disponible. */
+    grid-column: 1 / -1;
+    text-align: center; /* Centramos el título para que se vea mejor */
+    margin-bottom: 10px; /* Le damos un poco de espacio debajo */
+}
+
+.tipo-card {
+    /* MODELO DE CAJA: Define la apariencia de cada tarjeta individual */
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    
+    /* FLEXBOX: Ideal para alinear el contenido DENTRO de cada tarjeta.
+       Aquí lo usamos para organizar el título, párrafo e imagen en una columna
+       y para que ocupen todo el alto de la tarjeta. */
+    
+    justify-content: flex-start; /* Distribuye el espacio verticalmente */
+}
+
+.tipo-card h4 {
+    margin-bottom: 10px;
+    color: #007bff;
 }
 
 /* ==========================================================================
@@ -113,4 +190,33 @@ main{
   50% {
     transform: translateY(-8px);
   }
+}
+
+/* ==========================================================================
+   6. ESTILOS RESPONSIVE (PARA MÓVILES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* Hacemos que la rejilla de tarjetas sea de 1 sola columna */
+    .tipos-carbohidratos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hacemos que los elementos del menú se apilen verticalmente */
+    .navegacion-principal li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Reducimos el tamaño del logo en móviles */
+    #logo-principal {
+        padding: 10px;
+    }
+    #logo-principal img {
+        width: 60px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
 }
