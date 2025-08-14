@@ -8,7 +8,7 @@ const opciones =["Piedra","Papel","Tijera"];
 // Por ahora, la escribimos directamente. ¡Prueba cambiarla a "papel" o "tijera" para ver qué pasa!
 
 
-const eleccionUsuario = "Piedra";
+const eleccionUsuario = "Papel";
 
 // --- PASO 3: La elección de la computadora (La parte nueva) ---
 // ¿Cómo hacemos que la computadora elija al azar?
@@ -39,6 +39,23 @@ if(eleccionUsuario == eleccionComputadora){
 
     console.log("¡Es un empate!");
 
-}else if ()
+}else if(
+        (eleccionUsuario === "Piedra" && eleccionComputadora === "Tijera") ||
+        (eleccionUsuario === "Papel" && eleccionComputadora === "Piedra") ||
+        (eleccionUsuario === "Tijera" && eleccionComputadora === "Papel")
+){
+    // Caso 2: El usuario gana.
+  // Usamos '&&' (Y) para cada condición ganadora y '||' (O) para unirlas.
+    console.log("¡Ganaste!");
+}else{
+    // Caso 3: Si no es un empate y no ganaste, la computadora gana.
+
+    console.log("¡Perdiste! La computadora gana.");
+}
+
+
+
+
+
 
 
