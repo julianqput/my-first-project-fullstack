@@ -1,3 +1,7 @@
+/* ==========================================================================
+   1. RESET Y ESTILOS GLOBALES
+   ========================================================================== */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -25,6 +29,7 @@ header {
 }
 
 #logo-principal  {
+     /* MODELO DE CAJA: Usamos padding para crear el recuadro blanco alrededor del logo */
      /* MODELO DE CAJA: Le damos un fondo blanco para crear el recuadro. */
     background-color: white;
 
@@ -81,7 +86,7 @@ main{
 
 .navegacion-principal a {
   text-decoration: none;
-  color: black;
+  color: white;  /* Corregido: El color debe ser blanco para verse en el fondo oscuro */
   padding: 8px 15px;
   border-radius: 5px;
 }
@@ -89,6 +94,7 @@ main{
 .navegacion-principal a:hover{
   background-color: #555;
 }
+
 /* ==========================================================================
    3. COMPONENTES Y SECCIONES
    ========================================================================== */
@@ -103,7 +109,10 @@ main{
     padding: 25px;
 }
 
-.post h2 {
+/* CORRECCIÓN: Regla específica para los títulos dentro de los posts */
+/* Esto asegura que sean oscuros y visibles, sin heredar el color blanco del header */
+
+.post h2,  .post h3 {
     margin-bottom: 15px;
     color: #333;
 }
@@ -115,45 +124,31 @@ main{
     margin: 20px 0;
 }
 
+/* --- Estilos para TODAS las imágenes de los artículos --- */
+
 .imagen-articulo {
     /* MODELO DE CAJA: La base para el tamaño y la apariencia de la imagen */
     width: 100%; /* Hace que la imagen sea responsiva y ocupe el 100% de su contenedor */
     height: auto; /* Mantiene la proporción de la imagen al cambiar el ancho */
-    margin-top: 20px; /* Espacio para separarla del texto de arriba */
+    margin-top: 15px; /* Espacio para separarla del texto de arriba */
     border-radius: 8px; /* Esquinas redondeadas */
     border: 3px solid #eee; /* Un borde sutil */
 }
 
-/* --- ESTILOS PARA LAS IMÁGENES --- */
-.imagen-articulo {
-    /* MODELO DE CAJA: La base para el tamaño y la apariencia de la imagen */
-    width: 100%; /* Hace que la imagen sea responsiva y ocupe el 100% de su contenedor */
-    height: auto; /* Mantiene la proporción de la imagen al cambiar el ancho */
-    margin-top: 20px; /* Espacio para separarla del texto de arriba */
-    border-radius: 8px; /* Esquinas redondeadas */
-    border: 3px solid #eee; /* Un borde sutil */
-}
 
-/* --- Organización de los Tipos de Carbohidratos --- */
+/* --- Organización de los Tipos de detalles de javascript --- */
+
 .detalles {
     /* CSS GRID: La mejor herramienta para crear una rejilla de 2 dimensiones.
        Aquí creamos una rejilla con 3 columnas iguales y flexibles (1fr).
        Grid es perfecto para el layout general de una sección con múltiples elementos. */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Rejilla responsiva */
     gap: 20px; /* Espacio entre las tarjetas */
     margin-top: 30px;
    
 }
 
-.detalles h3{
-    /* Esta regla le dice al h3 que empiece en la primera línea de la
-       columna (1) y termine en la última (-1), ocupando así todo el
-       espacio horizontal disponible. */
-    grid-column: 1 / -1;
-    text-align: center; /* Centramos el título para que se vea mejor */
-    margin-bottom: 10px; /* Le damos un poco de espacio debajo */
-}
 
 .tipo-card {
     /* MODELO DE CAJA: Define la apariencia de cada tarjeta individual */
@@ -161,19 +156,34 @@ main{
     padding: 15px;
     text-align: center;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    
     /* FLEXBOX: Ideal para alinear el contenido DENTRO de cada tarjeta.
        Aquí lo usamos para organizar el título, párrafo e imagen en una columna
        y para que ocupen todo el alto de la tarjeta. */
-    
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start; /* Distribuye el espacio verticalmente */
 }
 
 .tipo-card h4 {
     margin-bottom: 10px;
     color: #007bff;
+}
+/* --- Sección de "Ejemplos" con la galería de imágenes --- */
+.galeria-ejemplos {
+    /* FLEXBOX: Usamos Flexbox aquí porque solo necesitamos alinear imágenes
+       en una fila y que se ajusten. Es más simple que Grid para este caso. */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes pasen a la siguiente línea */
+    gap: 15px; /* Espacio entre las imágenes */
+}
+
+/* Le decimos a cada imagen dentro de la galería que sea flexible */
+.galeria-ejemplos .imagen-articulo {
+    /* FLEXBOX: 'flex: 1' es un atajo que le dice a cada imagen que crezca
+       para ocupar el espacio disponible. 'min-width' asegura que no se
+       vuelvan demasiado pequeñas. */
+    flex: 1;
+    min-width: 250px;
 }
 
 /* ==========================================================================
@@ -219,4 +229,14 @@ main{
     h1 {
         font-size: 1.8rem;
     }
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }

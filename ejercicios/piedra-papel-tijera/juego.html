@@ -9,25 +9,29 @@
 </head>
 <body>
     <header>
+        <!-- El div del logo ahora solo contiene la imagen -->
         <div id="logo-principal">
             <img src="static/javascript.png" alt="Logo principal pages">
-            <h1>Aprendiendo javascript mini_proyecto</h1>
+            </div>
+            <h1>Aprendiendo javascript: Mini proyecto</h1>
             <nav class="navegacion-principal">
             <ul>    
-                 <li><a href="#que-es?">¿que es javascript?</a></li>
+                 <li><a href="#que-es">¿que es javascript?</a></li>
                 <li><a href="#detalles">detalles</a></li>
                 <li><a href="#ejemplos">ejemplos</a></li>
             </ul>
         </nav>
-        </div>
+        
 
     </header>
     <main>
         <article class="post">
-            <h2>¡Aprendiendo sobre javascript!</h2>
+            <header>
+            <h3>¡Aprendiendo sobre javascript!</h3>
             <p>Publicado el 14 de Agosto, 2025</p>
-        
-            <section id="que-es?">
+            </header>
+
+            <section id="que-es">
                 <h3>¿Que es javascript?</h3>
                 <p class="destacado">JavaScript es un lenguaje de programación de alto nivel, comúnmente utilizado para crear sitios web interactivos y dinamicos. Funciona en el navegador del usuario y permite la creción de contenido dinámico, animaciones, formularios interactivos y muchos más.</p>
                 <img class="imagen-articulo" src="static/code.jpg" alt="Imagen sobre codigo">
@@ -35,8 +39,9 @@
 
             <!-- Sección para agrupar algunos terminos sobre javascript -->
             <section id="detalles" class="terminos">
-                <h3>Esto nos ayuda a comprender sobre javascript</h3>
-            
+                <header>
+                <h2>Esto nos ayuda a comprender sobre javascript</h2>
+                </header>
                 <!-- Contenedor para cada tipo -->
 
                 <div class="tipo-card">
@@ -75,13 +80,14 @@
 
         <article id="ejemplos" class="post">
             <header>
-                <h2>Ejemplos</h2>
+                <h2>Ejemplos de uso</h2>
+
             </header>
-            <section>
+            <section class="galeria-ejemplos">
                 <p class="destacado">Validación de formularios, galerías de fotos interactivas, juegos web, actualizaciones de contenido en tiempo real, etc. </p>
-                <img class="imagen-articulo" src="static/validación-formularios.jpg">
-                <img class="imagen-articulo" src="static/juegos-web.png">
-                <img class="imagen-articulo" src="static/actualizaciones-tiempo-real.jpeg">
+                <img class="imagen-articulo" src="static/validación-formularios.jpg" alt=" Ejemplos de validación de formularios ">
+                <img class="imagen-articulo" src="static/juegos-web.png" alt="Ejemplo de juego web">
+                <img class="imagen-articulo" src="static/actualizaciones-tiempo-real.jpeg" alt=" Ejemplo de actualizaciones en tiempo real">
             </section>
 
         </article>
