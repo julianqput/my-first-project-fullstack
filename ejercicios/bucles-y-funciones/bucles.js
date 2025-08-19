@@ -74,21 +74,17 @@ console.log("Esta es la suma Total:",sumaTotal);
 // 5. Si la palabra actual es más larga, actualiza el valor de `palabraMasLarga` con la palabra actual.
 // 6. Después del bucle, muestra en la consola: "La palabra más larga es: [palabraMasLarga]".
 
-console.log("\n---Ejercicio 6: Palabra más larga: ---");
+const palabra = ["hola","javascript","programacion","web"];
 
-const palabras = ["hola","javascript","programacion","web"];
+let palabraMasLarga = palabra[0];
 
-let palabraMasLarga = palabras[0];
-
-for(i=1;i<palabras.length;i++)
-{
-    if(palabras[i].length>palabraMasLarga.length)
+for( i = 1; i < palabra.length ; i++ ){
+    if(palabra[i].length > palabraMasLarga.length)
     {
-        palabras = palabraMasLarga
+        palabraMasLarga = palabra[i];
     }
-
 }
-console.log("La palabra mas larga es:",)
+console.log(`La palabra más larga es: ${palabraMasLarga}`);
 
 
 // --- Ejercicio 7 (Dificultad: Media): Crear una función que filtre números pares ---
@@ -106,4 +102,29 @@ console.log("La palabra mas larga es:",)
 // 9. Muestra el resultado final (el array solo con números pares) en la consola.
 
 console.log("\n--- Ejercicio 7: Filtrar Números Pares ---");
-// Escribe tu código aquí abajo
+
+function filtrarPares(arrayDeNumeros){
+
+    numerosPares=[]
+
+    for( i = 0; i < arrayDeNumeros.length; i++ ){
+
+        const numeroActual = arrayDeNumeros[i]; // Guardamos el número actual para más claridad
+
+        if( numeroActual % 2 == 0 ){
+
+            numerosPares.push(numeroActual);
+        }
+    }
+
+    return numerosPares;
+}
+
+// 1. Creamos nuestra lista de prueba
+const misNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// 2. Llamamos a la función, le pasamos nuestra lista y guardamos el resultado
+const resultadoFinal = filtrarPares(misNumeros);
+
+// 3. Mostramos el resultado en la consola
+console.log("Los números pares son:", resultadoFinal); // Debería mostrar [2, 4, 6, 8, 10]
