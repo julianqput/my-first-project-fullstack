@@ -128,3 +128,24 @@ const resultadoFinal = filtrarPares(misNumeros);
 
 // 3. Mostramos el resultado en la consola
 console.log("Los números pares son:", resultadoFinal); // Debería mostrar [2, 4, 6, 8, 10]
+
+
+// ==========================================================================
+//  EJERCICIO 1 (Dificultad: Fácil): Saludo Personalizado
+//  - Problema: Crear una función que reciba un nombre y devuelva un saludo.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función con un nombre descriptivo, por ejemplo, `crearSaludo`.
+// 2. La función debe aceptar un "ingrediente" (parámetro). Dale un nombre, como `nombrePersona`.
+// 3. Dentro de la función, construye una frase. Puedes usar Template Literals para unir "Hola, " con el `nombrePersona` y un "!".
+// 4. La función debe "entregar" (return) esa frase completa.
+// 5. Fuera de la función, llama a tu nueva máquina con tu propio nombre como argumento.
+// 6. Guarda el resultado que te devuelve la función en una constante llamada `miSaludo`.
+// 7. Muestra `miSaludo` en la consola.
+
+console.log("\n---Ejercicio 1: Saludo Personalizado---");
+
+function crearSaludo(nombrePersona){
+    
+}
