@@ -260,4 +260,116 @@ const elSaludo = crearSaludo("Julián");
 console.log(elSaludo);
 
 
+// ==========================================================================
+//  EJERCICIO 1 (Dificultad: Fácil): Saludo Personalizado
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función con un nombre descriptivo, por ejemplo, `crearSaludo`.
+// 2. La función debe aceptar un "ingrediente" (parámetro). Dale un nombre, como `nombrePersona`.
+// 3. Dentro de la función, construye una frase. Puedes usar Template Literals para unir "Hola, " con el `nombrePersona` y un "!".
+// 4. La función debe "entrega" (return) esa frase completa.
+// 5. Fuera de la función, llama a tu nueva máquina con tu propio nombre como argumento.
+// 6. Guarda el resultado que te devuelve la función en una constante llamada `miSaludo`.
+// 7. Muestra `miSaludo` en la consola.
+
+console.log("\n--- Ejercicio 1: Saludo Personalizado ---");
+
+function crearSaludo(nombrePersona){
+    const frase = `Hola,${nombrePersona}!`;
+    return frase
+}
+
+const saludo = crearSaludo("Julián");
+console.log(saludo);
+
+// ==========================================================================
+//  EJERCICIO 2 (Dificultad: Media): ¿Es Mayor de Edad?
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función llamada `esMayorDeEdad`.
+// 2. Debe aceptar un parámetro: `edad`.
+// 3. Dentro de la función, usa un condicional `if/else`.
+// 4. La condición del `if` debe verificar si la `edad` es mayor o igual a 18.
+// 5. Si la condición es verdadera, la función debe devolver (return) `true`.
+// 6. Si no (en el `else`), la función debe devolver `false`.
+// 7. Fuera de la función, pruébala dos veces:
+//    a. Llama a la función con una edad menor a 18 (ej: 15) y muestra el resultado.
+//    b. Llama a la función con una edad mayor a 18 (ej: 25) y muestra el resultado.
+
+function esMayorDeEdad(edad){
+    if(edad<=18){
+        return true
+    }else{
+        return false
+    }
+}
+
+const esMayor = esMayorDeEdad(15);
+const esMenor = esMayorDeEdad(25);
+
+console.log(`Es mayor,${esMayor}`);
+console.log(`Es menor,${esMenor}`);
+
+
+
+// ==========================================================================
+//  EJERCICIO 4 (Dificultad: Media-Alta): Invertir una Cadena de Texto
+//  - Problema: Crear una función que reciba un string (texto) y devuelva
+//    un nuevo string con los caracteres en orden inverso.
+//    Ejemplo: si recibe "hola", debe devolver "aloh".
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función `invertirCadena` que acepte un parámetro `texto`.
+// 2. Dentro, crea una variable `let` llamada `cadenaInvertida` y asígnale un
+//    string vacío: "". Aquí iremos construyendo el nuevo texto.
+// 3. Usa un bucle `for` para recorrer el `texto` de atrás hacia adelante.
+//    (Pista: el bucle debe empezar en el último índice (texto.length - 1),
+//    continuar mientras i >= 0, y decrementar en cada paso (i--)).
+// 4. En cada vuelta, toma el carácter actual (`texto[i]`) y añádelo al final
+//    de `cadenaInvertida`. (Pista: cadenaInvertida = cadenaInvertida + texto[i];)
+// 5. Después del bucle, la función debe devolver (return) `cadenaInvertida`.
+// 6. Fuera de la función, prueba tu función con una palabra y muestra el resultado.
+
+console.log("\n--- Ejercicio 4: Invertir una Cadena de Texto ---");
+
+function invertirCadena (texto){
+    let cadenaInvertida = {};
+    for( i = 0; i < texto.length -1; i++ ){
+        
+    }
+
+}
+
+
+
+
+// ==========================================================================
+//  EJERCICIO 5 (Dificultad: Media-Alta): Contar Vocales
+//  - Problema: Crear una función que reciba un string y devuelva el número
+//    total de vocales (a, e, i, o, u) que contiene.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función `contarVocales` que acepte un parámetro `texto`.
+// 2. Dentro, crea una variable `let` llamada `contadorVocales` e inicialízala en 0.
+// 3. Crea una constante `vocales` que sea un string con todas las vocales: "aeiou".
+//    Esto nos ayudará a comparar fácilmente.
+// 4. Usa un bucle `for` para recorrer cada carácter del `texto` que recibió la función.
+// 5. Dentro del bucle, convierte el carácter actual a minúscula para evitar problemas
+//    con mayúsculas. (Pista: `let caracter = texto[i].toLowerCase();`).
+// 6. Usa un condicional `if` para verificar si el `caracter` actual está incluido
+//    en nuestro string de `vocales`.
+//    (Pista: un string tiene un método .includes() que devuelve true o false.
+//    Ejemplo: `vocales.includes(caracter)`).
+// 7. Si la condición es verdadera, incrementa `contadorVocales` en 1.
+// 8. Después del bucle, la función debe devolver (return) `contadorVocales`.
+// 9. Fuera de la función, pruébala con una frase y muestra el resultado.
+
+console.log("\n--- Ejercicio 5: Contar Vocales ---");
+
+// Escribe tu código aquí abajo
+
 
