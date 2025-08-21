@@ -147,5 +147,117 @@ console.log("Los números pares son:", resultadoFinal); // Debería mostrar [2, 
 console.log("\n---Ejercicio 1: Saludo Personalizado---");
 
 function crearSaludo(nombrePersona){
-    
+    const frase = `Hola, ${nombrePersona}!`; /* esta tambien es una forma de escribirir const fraseAntigua = "Hola, " + nombrePersona + "!";*/
+    return frase;
 }
+
+const miSaludo = crearSaludo("Julián");
+console.log(miSaludo);
+
+// ==========================================================================
+//  EJERCICIO 2 (Dificultad: Media): ¿Es Mayor de Edad?
+//  - Problema: Crear una función que reciba una edad y devuelva `true` si la
+//    persona es mayor de edad (18 o más) y `false` si no lo es.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función llamada `esMayorDeEdad`.
+// 2. Debe aceptar un parámetro: `edad`.
+// 3. Dentro de la función, usa un condicional `if/else`.
+// 4. La condición del `if` debe verificar si la `edad` es mayor o igual a 18.
+// 5. Si la condición es verdadera, la función debe devolver (return) `true`.
+// 6. Si no (en el `else`), la función debe devolver `false`.
+// 7. Fuera de la función, pruébala dos veces:
+//    a. Llama a la función con una edad menor a 18 (ej: 15) y muestra el resultado.
+//    b. Llama a la función con una edad mayor a 18 (ej: 25) y muestra el resultado.
+
+console.log("\n---Ejercicio 2: ¿Es mayor de edad?---");
+
+function esMayorDeEdad(edad){
+    if(edad>=18){
+        return true
+    }else{
+        return false
+    }
+}
+
+const resultadoMenor = esMayorDeEdad(15);
+console.log(`¿Una persone de 15 años es mayor de edad?: ${resultadoMenor}`);
+
+const resultadoMayor = esMayorDeEdad(25);
+console.log(`¿Una persona de 25 años es mayor de edad?: ${resultadoMayor}`);
+
+function esMayorDeEdadSimplificado(edad) {
+    return edad >= 18;
+}
+
+console.log("\n--- Prueba con la función simplificada ---");
+console.log(`(Simplificado) ¿Una persona de 17 es mayor de edad?: ${esMayorDeEdadSimplificado(17)}`);
+console.log(`(Simplificado) ¿Una persona de 20 es mayor de edad?: ${esMayorDeEdadSimplificado(20)}`);
+
+/*Estas dos opciones sirven pero una simplifica muchas cosas*/
+
+// ==========================================================================
+//  EJERCICIO 3 (Dificultad: Media-Alta): Encontrar el Número Más Grande
+//  - Problema: Crear una función que reciba un array de números y devuelva
+//    el número más grande de esa lista.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función `encontrarMaximo` que acepte un parámetro `arrayDeNumeros`.
+// 2. Dentro, crea una variable `let` llamada `maximoActual` y asígnale el primer
+//    número del array (`arrayDeNumeros[0]`). Este será nuestro "campeón" inicial.
+// 3. Usa un bucle `for` para recorrer el `arrayDeNumeros` (puedes empezar desde el índice 1).
+// 4. En cada vuelta del bucle, compara el número actual (`arrayDeNumeros[i]`) con `maximoActual`.
+// 5. Si el número actual es más grande que `maximoActual`, actualiza `maximoActual` con ese número.
+// 6. Después de que el bucle termine, la variable `maximoActual` contendrá el número más grande.
+// 7. La función debe devolver (return) `maximoActual`.
+// 8. Fuera de la función, crea un array de números de prueba.
+// 9. Llama a tu función con el array de prueba y muestra el resultado en la consola.
+
+console.log("\n --- Ejercicio 3: Encontrar el Número mas grande --- ");
+
+function encontrarMaximo (arrayDeNumeros){
+
+    let maximoActual = arrayDeNumeros[0];
+
+    for( let i = 1; i < arrayDeNumeros.length; i++ ){
+        maximoActual = arrayDeNumeros[i];
+        if(arrayDeNumeros[i]>maximoActual){
+            maximoActual = arrayDeNumeros[i];
+        }
+    }
+    return maximoActual;
+}
+
+const numerosPrueba = [1,2,4,7,9,4,5,10];
+const numeroMayor = encontrarMaximo(numerosPrueba);
+
+console.log(`El número mayor en la lista es: ${numeroMayor}`);
+
+
+// ==========================================================================
+//  EJERCICIO 1 (Dificultad: Fácil): Saludo Personalizado
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función con un nombre descriptivo, por ejemplo, `crearSaludo`.
+// 2. La función debe aceptar un "ingrediente" (parámetro). Dale un nombre, como `nombrePersona`.
+// 3. Dentro de la función, construye una frase. Puedes usar Template Literals para unir "Hola, " con el `nombrePersona` y un "!".
+// 4. La función debe "entrega" (return) esa frase completa.
+// 5. Fuera de la función, llama a tu nueva máquina con tu propio nombre como argumento.
+// 6. Guarda el resultado que te devuelve la función en una constante llamada `miSaludo`.
+// 7. Muestra `miSaludo` en la consola.
+
+console.log("\n--- Ejercicio 1: Saludo Personalizado ---");
+
+function crearSaludo(nombrePersona){
+    const frase = `Hola,${nombrePersona}!`;
+    return frase;
+}
+
+const elSaludo = crearSaludo("Julián");
+console.log(elSaludo);
+
+
+
