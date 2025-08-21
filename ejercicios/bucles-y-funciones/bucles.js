@@ -335,15 +335,17 @@ console.log(`Es menor,${esMenor}`);
 
 console.log("\n--- Ejercicio 4: Invertir una Cadena de Texto ---");
 
-function invertirCadena (texto){
-    let cadenaInvertida = {};
-    for( i = 0; i < texto.length -1; i++ ){
-        
+function invertirCadena(texto) {
+    let cadenaInvertida = "";
+    for (let i = texto.length - 1; i >= 0; i--) {
+        cadenaInvertida = cadenaInvertida + texto[i];
     }
-
+    return cadenaInvertida;
 }
 
-
+const palabraOriginal = "javascript";
+const palabraInvertida = invertirCadena(palabraOriginal);
+console.log(`La palabra "${palabraOriginal}" invertida es: "${palabraInvertida}"`);
 
 
 // ==========================================================================
@@ -370,6 +372,19 @@ function invertirCadena (texto){
 
 console.log("\n--- Ejercicio 5: Contar Vocales ---");
 
-// Escribe tu código aquí abajo
 
+function contarVocales(texto) {
+    let contadorVocales = 0;
+    const vocales = "aeiou";
+    for (let i = 0; i < texto.length; i++) {
+        let caracter = texto[i].toLowerCase();
+        if (vocales.includes(caracter)) {
+            contadorVocales++;
+        }
+    }
+    return contadorVocales;
+}
 
+const fraseDePrueba = "Hola Mundo, estoy aprendiendo JavaScript!";
+const totalVocales = contarVocales(fraseDePrueba);
+console.log(`La frase "${fraseDePrueba}" tiene ${totalVocales} vocales.`);
