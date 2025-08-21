@@ -387,4 +387,4 @@ function contarVocales(texto) {
 
 const fraseDePrueba = "Hola Mundo, estoy aprendiendo JavaScript!";
 const totalVocales = contarVocales(fraseDePrueba);
-console.log(`La frase "${fraseDePrueba}" tiene ${totalVocales} vocales.`);
+console.log(`La frase "${fraseDePrueba}" tiene ${totalVocales} vocales.`);x
