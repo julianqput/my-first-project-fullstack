@@ -50,5 +50,49 @@ console.log(`La nota ${nota3} corresponde a un estado: ${resultado3}`);*/ ///est
 // 6. Muestra los resultados en la consola.
 
 
+// ==========================================================================
+//  EJERCICIO 1: Calculadora de Áreas de Rectángulos
+// =======================================================================
 
+console.log("\n---Ejercicio 1: Calculadora de Áreas ---");
+
+const ancho1 = 5;
+const alto1 = 10;
+const area1 = ancho1 * alto1;
+
+console.log(`El áera del primer rectángulo es: ${area1}`);
+
+const ancho2 = 20;
+const alto2 = 15;
+const area2 = ancho2 * alto2;
+console.log(`El área del segundo rectángulo es: ${area2}`);
+
+const ancho3 = 8;
+const alto3 = 3;
+const area3 = ancho3 * alto3;
+console.log(`El área del segundo rectángulo es: ${area3}`);
+
+// --- TU MISIÓN ---
+// 1. Identifica la lógica que se repite: la fórmula `ancho * alto`.
+// 2. Crea una función llamada `calcularArea`.
+// 3. La función debe aceptar dos parámetros: `ancho` y `alto`.
+// 4. Dentro de la función, calcula el área y haz que la función DEVUELVA (return) el resultado.
+// 5. Usa tu nueva función para calcular el área de los tres rectángulos con una sola línea de código para cada uno.
+// 6. Muestra los resultados en la consola.
+
+console.log("\n--- Solución con Función ---");
+
+function calcularArea (ancho,alto){
+    const area = ancho * alto;
+    return area;
+}
+
+const  resultadoArea1 = calcularArea(ancho1,alto1);
+console.log(`El área del primer rectángulo (con función) es: ${resultadoArea1}`);
+
+const  resultadoArea2 = calcularArea(ancho2,alto2);
+console.log(`El área del primer rectángulo (con función) es: ${resultadoArea2}`);
+
+const  resultadoArea3 = calcularArea(ancho3,alto3);
+console.log(`El área del primer rectángulo (con función) es: ${resultadoArea3}`);
 
