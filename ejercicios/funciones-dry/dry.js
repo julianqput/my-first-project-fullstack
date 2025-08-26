@@ -181,6 +181,25 @@ console.log(`El precio final del Producto C es: $${precioFinalC}`);
 console.log("\n--- Solución con Función ---");
 
 function calcularPrecioFinal(precioOriginal,porcentajeDescuento){
-    const preciFinal = precioProducto - (precioProducto * descuentoProducto);
+    const preciFinal = precioOriginal - (precioOriginal * porcentajeDescuento);
+    return preciFinal;
 
 }
+
+const preciFinalprA = calcularPrecioFinal(precioProductoA,descuentoProductoA);
+console.log(`El precio final del producto A con desceunto es: $${preciFinalprA}`);
+
+const preciFinalprB = calcularPrecioFinal(precioProductoB,descuentoProductoB);
+console.log(`El precio final del producto B con desceunto es: $${preciFinalprB}`);
+
+const preciFinalprC = calcularPrecioFinal(precioProductoC,descuentoProductoC);
+console.log(`El precio final del producto C con desceunto es: $${preciFinalprC}`);
+
+
+console.log("---Ejercicio 5: validador de entradas de usuario");
+
+///Validador de Entradas de Usuario
+//  - Problema: En un formulario, necesitamos validar que diferentes campos
+//    de texto cumplan con una longitud mínima y máxima. La lógica de
+//    validación se está repitiendo.
+
