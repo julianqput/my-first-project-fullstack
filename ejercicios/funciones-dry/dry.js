@@ -203,3 +203,58 @@ console.log("---Ejercicio 5: validador de entradas de usuario");
 //    de texto cumplan con una longitud mínima y máxima. La lógica de
 //    validación se está repitiendo.
 
+const nombreUsuario = "julianq"; // Válido (entre 3 y 15 caracteres)
+
+if( nombreUsuario.length >= 3 && nombreUsuario <= 15 ){
+    console.log("El nombre del usuario es valido.");
+}else{
+    console.log("Error: El nombre del usuario debe de tener entre 3 y 15 caracteres.");
+}
+
+const contrasena = "12345678";// Válido (entre 8 y 20 caracteres)
+
+if (contrasena >= 8 && contrasena <= 20){
+    console.log("La contraseña es valida.");
+}else{
+    console.log("Error: La contraseña debe de tener en 8 y 20 caracteres.");
+}
+// --- TU MISIÓN ---
+// 1. La lógica para verificar la longitud de un texto se repite.
+// 2. Crea una función llamada `validarLongitud`.
+// 3. La función debe aceptar tres parámetros: `texto`, `min` y `max`.
+// 4. Dentro de la función, la lógica debe verificar si la longitud del `texto`
+//    es mayor o igual a `min` Y menor o igual a `max`.
+// 5. La función debe DEVUELVER (return) un booleano: `true` si es válido, `false` si no.
+// 6. Usa tu nueva función y un `if/else` para validar el `nombreUsuario` y la `contrasena`.
+
+console.log("\n--- Solución con Función ---");
+
+function validarLongitud(texto,min,max){
+    const esValido = texto.length >= min && texto.length <= max;
+    return esValido;
+}
+
+const esNombreValido = validarLongitud(nombreUsuario,3,15);
+
+if(esNombreValido){
+    console.log("Validación con funcion: El nombre de usuario es válido.");
+}else{
+    console.log("Validación con función: Error nombre de usuario.");
+}
+
+const esContrasenaValida = validarLongitud(contrasena,8,20);
+
+if(esContrasenaValida){
+    console.log("Validación con función: la contraseña es válida.");
+}else{
+    console.log("Valición con función: Error en la contraseña");
+}
+
+
+// ==========================================================================
+//  EJERCICIO 6: Generador de Listas de Productos en HTML
+//  - Problema: Tenemos una lista de productos y queremos generar una lista
+//    HTML para mostrarlos en una página. El formato de cada elemento de la
+//    lista (`<li>`) se repite.
+// ==========================================================================
+
