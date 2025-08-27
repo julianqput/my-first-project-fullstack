@@ -258,3 +258,58 @@ if(esContrasenaValida){
 //    lista (`<li>`) se repite.
 // ==========================================================================
 
+console.log("\n---Ejercicio 6: generador de listas de productos en HTML---");
+
+const producto1 = { nombre: "Laptop", precio: 1200};
+const producto2 = { nombre: "Mouse", precio: 25 };
+const producto3 = {nombre: "Teclado", precio: 80};
+
+let listaHTML = "<ul>";
+listaHTML += `<li>${producto1.nombre} - Precio: $${producto1.precio}</li>`;
+listaHTML += `<li>${producto2.nombre} - Precio: $${producto2.precio}</li>`;
+listaHTML += `<li>${producto3.nombre} - Precio: $${producto3.precio}</li>`;
+listaHTML += "</ul>";
+
+console.log("Lista HTML generada manualmente: ");
+console.log(listaHTML);
+
+// --- TU MISIÓN ---
+// 1. La lógica para crear cada `<li>` es idéntica.
+// 2. Crea una función llamada `crearItemProductoHTML`.
+// 3. La función debe aceptar un parámetro: un objeto `producto`.
+// 4. Dentro, debe usar un Template Literal para construir el string del `<li>`
+//    usando las propiedades `producto.nombre` y `producto.precio`.
+// 5. La función debe DEVUELVER (return) el string del `<li>` completo.
+// 6. Ahora, crea una segunda función llamada `generarListaProductosHTML` que
+//    acepte un array de `productos` como parámetro.
+// 7. Dentro de esta segunda función, usa un bucle `for` para recorrer el array de `productos`.
+//    En cada vuelta, llama a tu primera función (`crearItemProductoHTML`) para
+//    generar el `<li>` de cada producto y ve construyendo la lista HTML completa.
+// 8. Esta función debe devolver la lista completa, incluyendo las etiquetas `<ul>` y `</ul>`.
+
+console.log("\n---Solución con Funcion ---");
+
+const listaDeProductos = [
+    {nombre: "Laptop Pro", precio: 1500},
+    {nombre: "Monitor 4k", precio: 600},
+    {nombre: "Silla Ergonómica", precio: 350}
+]
+
+function crearItemProductoHTML(producto){
+    const itemHTML = `<li>${producto.nombre} - precio: $${producto.precio}</li>`;
+    return itemHTML;
+}
+
+function generarListaProductosHTML(productos){
+    for( let i = 0; i < productos.length; i++ ){
+        htmlFinal += crearItemProductoHTML(producto[i]);
+    }
+    htmlFinal += "</ul>";
+    return htmlFinal;
+}
+
+
+// Llama a tu función generadora principal y muestra el resultado
+const nuevaListaHTML = generarListaProductosHTML(listaDeProductos);
+console.log("Lista HTML generada con funciones:");
+console.log(nuevaListaHTML);
