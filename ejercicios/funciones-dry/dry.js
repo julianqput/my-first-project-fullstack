@@ -301,8 +301,9 @@ function crearItemProductoHTML(producto){
 }
 
 function generarListaProductosHTML(productos){
+    let htmlFinal = "<ul>"; 
     for( let i = 0; i < productos.length; i++ ){
-        htmlFinal += crearItemProductoHTML(producto[i]);
+        htmlFinal += crearItemProductoHTML(productos[i]);
     }
     htmlFinal += "</ul>";
     return htmlFinal;
