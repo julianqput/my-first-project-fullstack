@@ -387,4 +387,127 @@ function contarVocales(texto) {
 
 const fraseDePrueba = "Hola Mundo, estoy aprendiendo JavaScript!";
 const totalVocales = contarVocales(fraseDePrueba);
-console.log(`La frase "${fraseDePrueba}" tiene ${totalVocales} vocales.`);x
+console.log(`La frase "${fraseDePrueba}" tiene ${totalVocales} vocales.`);
+
+
+// ==========================================================================
+//  EJERCICIO 1 (Tarea del Día): Imprimir una Lista de Tareas
+//  - Problema: Crear una función que reciba un array de tareas y use un
+//    bucle 'for' para imprimir cada una en la consola.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función llamada `imprimirLista`.
+// 2. La función debe aceptar un parámetro: `tareas` (que será un array).
+// 3. Dentro de la función, escribe un bucle `for` que recorra el array `tareas`.
+// 4. En cada vuelta del bucle, usa `console.log()` para mostrar el elemento actual
+//    del array (tareas[i]).
+// 5. Esta función no necesita devolver (return) nada, ya que su único trabajo es imprimir.
+// 6. Fuera de la función, crea un array de tareas de prueba.
+// 7. Llama a tu función `imprimirLista` pasándole tu array de prueba.
+
+console.log("\n--- Ejercicio 1: Imprimir Lista de Tareas ---");
+
+function imprimirLista(tareas){
+    for( let i = 0; i < tareas.length; i++){
+        console.log(tareas[i]);
+    }
+}
+
+const lista1 = ["Hacer cafe","Estudiar JavaScript","Ir al gimnasio"];
+imprimirLista(lista1);
+
+
+
+// ==========================================================================
+//  EJERCICIO 2 (Dificultad: Media): Duplicar Números en una Lista
+//  - Problema: Crear una función que reciba un array de números, y devuelva
+//    un NUEVO array donde cada número sea el doble del original.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función llamada `duplicarNumeros`.
+// 2. Debe aceptar un parámetro: `arrayDeNumeros`.
+// 3. Dentro de la función, crea un nuevo array vacío llamado `resultados`.
+//    Aquí guardaremos los números duplicados.
+// 4. Escribe un bucle `for` para recorrer el `arrayDeNumeros`.
+// 5. En cada vuelta, toma el número actual, multiplícalo por 2, y guarda el
+//    resultado en una nueva variable (ej: `const numeroDuplicado`).
+// 6. Añade `numeroDuplicado` al final de tu array `resultados` usando el
+//    método `.push()`.
+// 7. Después de que el bucle termine, la función debe DEVOLVER (return) el
+//    array `resultados`.
+// 8. Fuera de la función, crea un array de números de prueba.
+// 9. Llama a tu función y muestra el nuevo array con los números duplicados.
+
+console.log("\n--- Ejercicio 2: Duplicar Números ---");
+
+function duplicarNumeros(arrayDeNumeros){
+    const resultado = [];
+    for( i = 0; i < arrayDeNumeros.length; i++){
+        let numeroActual = arrayDeNumeros[i];
+        const numeroDuplicado = numeroActual * 2;
+        resultado.push(numeroDuplicado);
+    }
+    return resultado;
+}
+
+const misNumeros2 = [10, 20, 30]; // Array de prueba
+const numerosDuplicados = duplicarNumeros(misNumeros2); // Llamamos a la función
+console.log(numerosDuplicados); // Mostramos el resultado
+
+
+
+
+
+// ==========================================================================
+//  EJERCICIO 3 (Dificultad: Media-Alta): Convertir Objetos a Strings
+//  - Problema: Crear una función que reciba un array de objetos de usuario
+//    y devuelva un NUEVO array de strings, donde cada string sea un saludo
+//    para ese usuario.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función llamada `crearSaludos`.
+// 2. La función debe aceptar un parámetro: `usuarios` (un array de objetos).
+// 3. Dentro de la función, crea un nuevo array vacío llamado `saludos`.
+// 4. Escribe un bucle `for` para recorrer el array `usuarios`.
+// 5. En cada vuelta, el elemento actual (`usuarios[i]`) será un objeto.
+//    Accede a la propiedad `nombre` de ese objeto (ej: `usuarios[i].nombre`).
+// 6. Crea un string de saludo usando un Template Literal (ej: `Hola, ${nombre}`).
+// 7. Añade ese string de saludo al array `saludos` usando `.push()`.
+// 8. Después del bucle, la función debe DEVOLVER (return) el array `saludos`.
+// 9. Fuera de la función, crea un array de objetos de usuario de prueba.
+//    Cada objeto debe tener una propiedad `nombre`.
+// 10. Llama a tu función y muestra el nuevo array de saludos en la consola.
+
+console.log("\n--- Ejercicio 3: Convertir Objetos a Strings ---");
+// Escribe tu código aquí abajo
+const listaDeUsuarios = [
+    { nombre: "Julián", edad: 30 },
+    { nombre: "Ana", edad: 25 },
+    { nombre: "Carlos", edad: 42 }
+];
+
+function crearSaludos(usuarios) {
+    const saludos = []; // 3. Creamos el array vacío para los resultados.
+
+    // 4. Recorremos el array de usuarios.
+    for (let i = 0; i < usuarios.length; i++) {
+        // 5. En cada vuelta, accedemos al nombre del usuario actual.
+        const nombreUsuario = usuarios[i].nombre;
+        
+        // 6. Creamos el string de saludo.
+        const saludoIndividual = `Hola, ${nombreUsuario}!`;
+
+        // 7. Añadimos el saludo a nuestro array de resultados.
+        saludos.push(saludoIndividual);
+    }
+
+    // 8. Devolvemos el array con todos los saludos.
+    return saludos;
+}
+
+const saludosGenerados = crearSaludos(listaDeUsuarios);
+console.log(saludosGenerados);
+// Debería mostrar: ["Hola, Julián!", "Hola, Ana!", "Hola, Carlos!"]

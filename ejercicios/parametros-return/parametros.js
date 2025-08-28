@@ -82,3 +82,66 @@ const segundoUsuario = crearUsuario("Luis",16);
 
 console.log(primerUsuario);
 console.log(segundoUsuario);
+
+
+
+// ==========================================================================
+//  NUEVO EJERCICIO 4: Formateador de Nombres Completos
+//  - Problema: Crear una función que reciba un nombre y un apellido, y
+//    devuelva el nombre completo formateado.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función llamada `obtenerNombreCompleto`.
+// 2. La función debe aceptar dos parámetros: `nombre` y `apellido`.
+// 3. Dentro de la función, usa un Template Literal para unir el nombre y el apellido
+//    con un espacio en medio.
+// 4. La función debe DEVOLVER (return) el nombre completo.
+// 5. Fuera de la función, pruébala con tu nombre y apellido.
+// 6. Guarda el resultado en una variable y muéstralo en la consola.
+
+console.log("\n--- Ejercicio 4: Formateador de Nombres ---");
+
+function obtenerNombreCompleto (nombre,apellido){
+    const unirNomApell = `Este es su nombre completo; ${nombre} ${apellido}`;
+    return unirNomApell;
+}
+
+const primerNombre = "julián";
+const segundoNombre = "Quesada";
+
+const nombreCompleto = obtenerNombreCompleto(primerNombre,segundoNombre);
+console.log(nombreCompleto);
+
+// ==========================================================================
+//  NUEVO EJERCICIO 5: Verificador de Lista Vacía
+//  - Problema: Crear una función que reciba un array y devuelva `true` si
+//    la lista está vacía, o `false` si tiene al menos un elemento.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función llamada `estaVacia`.
+// 2. La función debe aceptar un parámetro: `lista`.
+// 3. Dentro de la función, necesitas verificar la longitud (length) de la `lista`.
+// 4. Usa un condicional `if` para preguntar si la longitud de la `lista` es
+//    estrictamente igual a 0.
+// 5. Si es 0, la función debe devolver `true`.
+// 6. Si no (en el `else`), debe devolver `false`.
+// 7. Fuera de la función, crea dos arrays de prueba: uno con elementos y otro vacío.
+// 8. Llama a tu función con ambos arrays y muestra los resultados en la consola.
+
+console.log("\n--- Ejercicio 5: Verificador de Lista Vacía ---");
+
+function estaVacia (lista){
+    return lista.length === 0;
+}
+
+
+const lista1 = [10,20,40,30];
+const lista2 = [];
+
+const pruebaDeLista = estaVacia(lista1);
+console.log(`Esta funcion comprueba si la lista esta vacia?:${pruebaDeLista}`);
+
+const pruebaDeLista2 = estaVacia(lista2);
+console.log(`Esta funcion comprueba si la lista esta vacia?:${pruebaDeLista2}`);
