@@ -33,7 +33,7 @@ function eliminarTarea(indice) {
   if (indice >= 0 && indice < tareas.length) {
     // .splice() modifica el array original y devuelve un array con los elementos eliminados.
     const tareaEliminada = tareas.splice(indice, 1);
-    console.log(`Tarea "${tareaEliminada[0]}" eliminada.`);
+    console.log("tarea eliminada",tareaEliminada);
   } else {
     console.log("Índice no válido. No se eliminó ninguna tarea.");
   }
@@ -46,7 +46,7 @@ console.log("--- Mi lista de Tareas ---");
 if ( tareas.length === 0){
     console.log("No hay tareas pendientes.");
 }else{
-    for ( let i = 0; i < tareas.length; i++ );
+    for ( let i = 0; i < tareas.length; i++   );
 }
 }
 
