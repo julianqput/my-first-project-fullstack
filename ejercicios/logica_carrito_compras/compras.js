@@ -30,8 +30,42 @@ function agregarAlCarrito(precio){
 
 function calcularTotal(){
     let total = 0;
-    for( i = 0; i < carrito; i++ ){
+    for( let i = 0; i < carrito.length; i++ ){
         total += carrito[i];
     }
     return total;
 }
+
+// --- FUNCIÓN 3: Mostrar el Carrito y el Total ---
+// Guía: Esta función mostrará un resumen de la compra.
+//       1. Muestra un mensaje inicial, como "--- Resumen de tu Compra ---".
+//       2. Muestra los precios de los productos en el carrito. Puedes usar un bucle
+//          o simplemente mostrar el array completo.
+//       3. Llama a tu función `calcularTotal()` para obtener la suma final.
+//       4. Muestra el total en la consola con un mensaje claro, como "Total a pagar: $[total]".
+
+
+function mostrarResumen(){
+    console.log("---Resumen de tu compra---");
+    console.log("Precios en el carrito:",carrito);
+
+    const totalPagar = calcularTotal();
+    console.log(`Total a pagar: $${totalPagar}`);
+} 
+
+// ==========================================================================
+//  Zona de Pruebas
+//  - Simulemos una compra para probar nuestras funciones.
+// ==========================================================================
+
+// 1. Añadimos varios productos al carrito.
+
+console.log("\n...Añadiendo productos...");
+
+agregarAlCarrito(20);
+agregarAlCarrito(50);
+agregarAlCarrito(15);
+
+// 2. Mostramos el resumen final de la compra.
+console.log("\n...Mostrando resumend de la compra...");
+mostrarResumen();
