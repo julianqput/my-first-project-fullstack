@@ -69,3 +69,66 @@ agregarAlCarrito(15);
 // 2. Mostramos el resumen final de la compra.
 console.log("\n...Mostrando resumend de la compra...");
 mostrarResumen();
+
+/// =======================================================================
+/// ejercicio totalmente creado desde 0
+
+console.log("\n---Ejercicio: logistica gestion de flota de vehiculos---- ");
+
+flota = [
+    {
+        id: "AB-123-CD",
+        marca: "Toyota",
+        kilometraje:85000,
+        combustible: 45,
+        estadoDisponible:false
+    },
+    {
+        id:"BA-213-DC",
+        marca:"Renault",
+        kilometraje: 25000,
+        combustible:25,
+        estadoDisponible: true
+    },
+    {
+        id:"CB-312",
+        marca:"Chevrolet",
+        kilometraje:120000,
+        combustible: 4,
+        estadoDisponible: true
+    },
+    {
+        id:"CD-432",
+        marca:"Mazda",
+        kilometraje: 85000,
+        combustible:5,
+        estadoDisponible: false
+    }
+]
+
+function buscarVehiculo(id){
+     for( let i = 0; i < flota.length; i++){
+        if( flota[ï] === id){
+            return flota[i];
+        }
+    }
+    return null;
+}
+
+function vehiculosListosParaUsar(){
+    
+    const vehiculosListos = [];
+
+    for( let i = 0; i < flota[i].length; i++){
+
+        vehiculoActual = flota[i];
+
+        if( vehiculoActual.estadoDisponible === true && vehiculoActual.combustible > 10){
+            vehiculosListos.push(vehiculoActual);
+        }
+
+    }
+    return vehiculosListos;
+
+}
+
