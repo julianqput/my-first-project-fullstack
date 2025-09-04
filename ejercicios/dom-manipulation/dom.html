@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom-manipulation</title>
-    <script src="dom.js" type="text/javascript"></script>
+    <style>
+         body { font-family: sans-serif; text-align: center; padding-top: 20px; background-color: #f7f7f7; }
+        .contenedor { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .titulo-principal { color: #333; }
+        .boton { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .lista-items { list-style: none; padding: 0; }
+        .lista-items li { background-color: #e9ecef; margin: 5px 0; padding: 10px; border-radius: 5px; }
+        .resaltado { background-color: #ffc107 !important; } /* !important para asegurar que se aplique */
+    </style>
 </head>
 <body>
-    <h1>This project is for learning Dom-manipulation</h1>
+    <div class="contenedor">
+        <h1 class="titulo-principal" id ="titulo">Título original</h1>
+        <p>Este es un parrafo de ejemplo para nuestra práctica.</p>
+
+        <ul class="lista-items">
+            <li>Primer Ítem</li>
+            <li>segundo Ítem</li>
+            <li>Tercer Ítem</li>
+        </ul>
+
+        <button class="boton" id="mi-boton"> Haz Clic aquí</button>
+        <script src="dom.js" type="text/javascript"></script>
+    </div>
 </body>
 </html>
