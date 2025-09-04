@@ -94,7 +94,7 @@ flota = [
         id:"CB-312",
         marca:"Chevrolet",
         kilometraje:120000,
-        combustible: 4,
+        combustible: 45,
         estadoDisponible: true
     },
     {
@@ -107,8 +107,8 @@ flota = [
 ]
 
 function buscarVehiculo(id){
-     for( let i = 0; i < flota.length; i++){
-        if( flota[ï] === id){
+    for( let i = 0; i < flota.length; i++){
+        if( flota[i] === id){
             return flota[i];
         }
     }
@@ -131,4 +131,43 @@ function vehiculosListosParaUsar(){
     return vehiculosListos;
 
 }
+
+function calcularKilometrajePromedio(){
+    let sumaKmTotal = 0;
+    for( let i = 0; i < flota.length; i++ ){
+        sumaKmTotal += flota[i].kilometraje;
+    }
+    if( flota.length > 0 ){
+        const promedio = sumaKmTotal / flota.length;
+        return promedio
+    }else{
+        return 0;
+    }
+}
+
+const encontrarVehiculo = buscarVehiculo("AB-123-CD");
+console.log("Resultado de la busqueda (exito)", encontrarVehiculo);
+
+const vehiculoNoEncontrado = buscarVehiculo("XX-999-ZZ");
+console.log("Resultado de la búsqueda (fallo):", vehiculoNoEncontrado);
+
+
+console.log("\\n--- Probando la función vehiculosListosParaUsar ---");
+
+// --- Ejemplo 3: Obtener la lista de vehículos listos ---
+// 1. Llamamos a la función (no necesita "ingredientes").
+// 2. La función recorre la flota y crea un nuevo array con los vehículos que cumplen las condiciones.
+// 3. Guardamos ese nuevo array en la variable 'listos'.
+const listos = vehiculosListosParaUsar();
+console.log("Vehículos listos para usar:", listos);
+
+
+console.log("\\n--- Probando la función calcularKilometrajePromedio ---");
+
+// --- Ejemplo 4: Calcular el promedio de KM ---
+// 1. Llamamos a la función (tampoco necesita "ingredientes").
+// 2. La función suma todos los kilometrajes y los divide por el total de vehículos.
+// 3. Guardamos el número resultante en la variable 'promedio'.
+const promedio = calcularKilometrajePromedio();
+console.log(`El kilometraje promedio de la flota es: ${promedio} km`);
 
