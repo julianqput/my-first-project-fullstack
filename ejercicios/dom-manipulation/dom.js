@@ -32,4 +32,33 @@ boton.textContent = "¡Presióname!";
 // Paso 4: Cambiamos el color del fondo.
 boton.style.backgroundColor = '#090866ff'; 
 
+// --- Ejercicio 3: Seleccionar Múltiples Elementos y Modificarlos ---
+// 1. Selecciona TODOS los <li> dentro de la lista '.lista-items' usando querySelectorAll.
+// 2. Guarda los elementos en una constante llamada 'itemsDeLista'.
+// 3. Usa un bucle `for` para recorrer cada elemento en 'itemsDeLista'.
+// 4. Dentro del bucle, añade la clase 'resaltado' a cada ítem usando .classList.add().
+
+
+const itemsDeLista = document.querySelectorAll('.lista-items li');
+
+for (let i = 0; i < itemsDeLista.length; i++) {
+  const itemActual = itemsDeLista[i];
+  itemActual.classList.add('resaltado');
+}
+ 
+
+// --- Ejercicio 4 (Avanzado): Crear y Añadir un Nuevo Elemento ---
+// 1. Crea un nuevo elemento <li> usando document.createElement().
+// 2. Guárdalo en una constante llamada 'nuevoItem'.
+// 3. Asígnale el texto "Cuarto Ítem (añadido desde JS)" a su .textContent.
+// 4. Selecciona la lista <ul> con la clase '.lista-items'.
+// 5. Añade el 'nuevoItem' al final de la lista usando .appendChild().
+
+const nuevoItem = document.createElement('li'); 
+nuevoItem.textContent = "Cuarto ítem (añadido dese JS)";
+
+const lista = document.querySelector('.lista-items');
+lista.appendChild(nuevoItem);
+
+
 
