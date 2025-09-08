@@ -61,4 +61,76 @@ const lista = document.querySelector('.lista-items');
 lista.appendChild(nuevoItem);
 
 
+//Seleccionar el rpimer elemnto que coincida con un selector CSS:
 
+
+//const miElemento = document.querySelector('.mi-clase'); // Selecciona por clase
+//const otroElemento = document.querySelector('#mi-id');    // Selecciona por ID
+//const titulo = document.querySelector('h1');            // Selecciona por etiqueta
+
+
+//Seleccionar TODOS los elementos que coincidan con un selector de CSS:
+
+//const todosLosItems = document.querySelectorAll('.lista li'); // Devuelve una lista de todos los <li> dentro de '.lista'
+
+
+//Seleccionar un elemento por su id (forma clásica y muy rápida):
+//const botonPrincipal = document.getElementById('boton-enviar');
+
+
+//2. Modificar Elementos (Cambiar lo que ya existe)
+
+//Cambiar el contenido de TEXTO:
+//titulo.textContent = '¡Este es el nuevo título!';
+
+//Cambiar el HTML interno (¡úsalo con cuidado!):
+//const contenedor = document.querySelector('.contenedor');
+//contenedor.innerHTML = '<h2>Nuevo Subtítulo</h2><p>Nuevo párrafo.</p>';
+
+
+//Cambiar un atributo (como el src de una imagen o el href de un enlace):
+//const imagen = document.querySelector('#logo');
+//imagen.src = 'nuevo-logo.png';
+
+//const enlace = document.querySelector('a');
+// enlace.href = 'https://www.google.com';
+
+//Cambiar estilos de CSS (se escribe en camelCase):
+//const caja = document.querySelector('.caja-destacada');
+//caja.style.backgroundColor = 'yellow';
+//caja.style.fontSize = '24px';
+//caja.style.border = '2px solid black';
+
+//ñadir o quitar clases de CSS (la forma más profesional de cambiar estilos):
+//const menu = document.querySelector('.menu');
+//menu.classList.add('abierto');    // Añade la clase 'abierto'
+//menu.classList.remove('cerrado'); // Quita la clase 'cerrado'
+//menu.classList.toggle('visible'); // Si tiene la clase 'visible', la quita. Si no, la añade.
+
+
+//Crear y Añadir Nuevos Elementos (Contenido Dinámico)
+//Crear un nuevo elemento en la memoria:
+//const nuevoParrafo = document.createElement('p');
+
+//Añadir un nuevo elemento como el ÚLTIMO HIJO de otro:
+//const contenedor = document.querySelector('.contenedor');
+//nuevoParrafo.textContent = 'Este párrafo fue creado con JavaScript.';
+//contenedor.appendChild(nuevoParrafo);
+
+//4. Eliminar Elementos
+//Eliminar un elemento de la página:
+//const elementoAEliminar = document.querySelector('#elemento-viejo');
+//elementoAEliminar.remove();
+
+//5. Manejar Eventos (Hacer la Página Interactiva)
+//Esto te permite ejecutar código en respuesta a las acciones del usuario.
+
+//Escuchar un evento (como un clic):
+
+//const miBoton = document.querySelector('#mi-boton');
+
+//miBoton.addEventListener('click', function() {
+  // El código que se ejecuta CUANDO el usuario hace clic
+//  console.log('¡El botón fue presionado!');
+//  document.body.style.backgroundColor = 'lightblue';
+//});
