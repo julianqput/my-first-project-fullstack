@@ -134,3 +134,35 @@ lista.appendChild(nuevoItem);
 //  console.log('¡El botón fue presionado!');
 //  document.body.style.backgroundColor = 'lightblue';
 //});
+
+
+// ==========================================================================
+//  ¡NUEVOS EJERCICIOS!
+// ==========================================================================
+
+// --- Ejercicio 5: Modificar Atributos ---
+// 1. Selecciona el párrafo que tiene la clase 'parrafo-ejemplo'.
+// 2. A ese párrafo, añádele un atributo 'title' que diga "Este es un tooltip creado con JS".
+//    (Pista: para añadir o cambiar un atributo, puedes usar .setAttribute('nombre-del-atributo', 'valor')).
+// 3. Verifica en el navegador: al pasar el mouse sobre el párrafo, debería aparecer el texto.
+
+// Escribe tu código aquí
+
+
+// --- Ejercicio 6: Modificar Contenido basado en Posición ---
+// 1. Vuelve a seleccionar todos los <li> de la lista '.lista-items'.
+// 2. Usa un bucle `for` para recorrerlos.
+// 3. Dentro del bucle, usa un condicional `if` para verificar si el ítem es el primero (índice 0).
+// 4. Si es el primer ítem, cambia su .textContent para que diga "Este es el PRIMERO".
+//    (Pista: if (i === 0) { ... }).
+
+// Escribe tu código aquí
+
+
+// --- Ejercicio 7 (Avanzado): Crear y Añadir con Estilo ---
+// 1. Crea un nuevo elemento `<div>` usando document.createElement().
+// 2. Asígnale el texto "¡Hola a todos!".
+// 3. Usando .style, dale un color de fondo 'lightblue', un padding de '15px' y un margen superior de '20px'.
+// 4. Selecciona el elemento con la clase '.contenedor'.
+// 5. Añade el nuevo div que creaste AL PRINCIPIO del contenedor.
+//    (Pista: en lugar de .appendChild() que lo añade al final, investiga cómo usar .prepend() que lo añade al principio).

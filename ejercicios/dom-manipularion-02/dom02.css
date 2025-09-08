@@ -1,0 +1,181 @@
+/* Reset Básico y Estilos Globales */
+* {
+    /* Esto sirve para que el tamaño de la caja incluya el borde y el relleno. */
+    box-sizing: border-box;
+    /* Esto sirve para eliminar los márgenes por defecto. */
+    margin: 0;
+    /* Esto sirve para eliminar los rellenos por defecto. */
+    padding: 0;
+}
+
+body {
+    /* Esto sirve para definir la fuente principal de la página. */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Esto sirve para dar un color de fondo suave a toda la página. */
+    background-color: #e9ecef;
+    /* Esto sirve para usar Flexbox para centrar el contenido. */
+    display: flex;
+    /* Esto sirve para centrar el contenedor principal horizontalmente. */
+    justify-content: center;
+    /* Esto sirve para alinear el contenedor en la parte superior. */
+    align-items: flex-start;
+    /* Esto sirve para que el cuerpo ocupe al menos toda la altura de la pantalla. */
+    min-height: 100vh;
+    /* Esto sirve para dar un espacio superior y que el contenedor no esté pegado al borde. */
+    padding-top: 50px;
+}
+
+/* Contenedor Principal */
+.contenedor-tareas {
+    /* Esto sirve para que el contenedor ocupe todo el ancho en pantallas pequeñas. */
+    width: 100%;
+    /* Esto sirve para limitar el ancho máximo en pantallas grandes. */
+    max-width: 500px;
+    /* Esto sirve para dar un fondo blanco al contenedor. */
+    background-color: white;
+    /* Esto sirve para redondear las esquinas del contenedor. */
+    border-radius: 12px;
+    /* Esto sirve para añadir una sombra suave para darle profundidad. */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Esto sirve para que el contenido no se salga de las esquinas redondeadas. */
+    overflow: hidden;
+}
+
+/* Cabecera */
+.header {
+    /* Esto sirve para dar un color de fondo azul a la cabecera. */
+    background-color: #007bff;
+    /* Esto sirve para que el texto dentro sea blanco. */
+    color: white;
+    /* Esto sirve para dar espacio interno a la cabecera. */
+    padding: 20px;
+    /* Esto sirve para centrar el texto de la cabecera. */
+    text-align: center;
+}
+
+
+.header h1 {
+    /* Esto sirve para definir el tamaño del título principal. */
+    font-size: 1.8rem;
+    /* Esto sirve para dar un espacio debajo del título. */
+    margin-bottom: 15px;
+}
+
+.input-container {
+    /* Esto sirve para usar Flexbox para alinear el input y el botón. */
+    display: flex;
+}
+
+#nueva-tarea-input {
+    /* Esto sirve para que el input crezca y ocupe el espacio disponible. */
+    flex-grow: 1;
+    /* Esto sirve para quitar el borde por defecto. */
+    border: none;
+    /* Esto sirve para dar espacio interno al texto. */
+    padding: 12px;
+    /* Esto sirve para definir el tamaño de la fuente. */
+    font-size: 1rem;
+    /* Esto sirve para redondear las esquinas izquierdas. */
+    border-radius: 8px 0 0 8px;
+}
+
+#agregar-tarea-btn {
+    /* Esto sirve para quitar el borde por defecto. */
+    border: none;
+    /* Esto sirve para dar un color de fondo más oscuro al botón. */
+    background-color: #0056b3;
+    /* Esto sirve para que el texto sea blanco. */
+    color: white;
+    /* Esto sirve para definir el tamaño del ícono '+'. */
+    font-size: 1.5rem;
+    /* Esto sirve para dar espacio a los lados del ícono. */
+    padding: 0 20px;
+    /* Esto sirve para que el cursor cambie a una mano. */
+    cursor: pointer;
+    /* Esto sirve para redondear las esquinas derechas. */
+    border-radius: 0 8px 8px 0;
+    /* Esto sirve para suavizar el cambio de color al pasar el mouse. */
+    transition: background-color 0.2s;
+}
+
+#agregar-tarea-btn:hover {
+    /* Esto sirve para oscurecer el botón cuando el mouse está encima. */
+    background-color: #004494;
+}
+
+/* Lista de Tareas */
+.lista-container {
+    /* Esto sirve para dar espacio interno al contenedor de la lista. */
+    padding: 20px;
+}
+
+#lista-de-tareas {
+    /* Esto sirve para quitar los puntos de la lista. */
+    list-style: none;
+}
+
+.tarea-item {
+    /* Esto sirve para usar Flexbox para alinear el texto y el botón de eliminar. */
+    display: flex;
+    /* Esto sirve para centrar verticalmente los elementos. */
+    align-items: center;
+    /* Esto sirve para dar espacio interno a cada tarea. */
+    padding: 15px;
+    /* Esto sirve para dar un fondo gris claro a cada tarea. */
+    background-color: #f8f9fa;
+    /* Esto sirve para redondear las esquinas de cada tarea. */
+    border-radius: 8px;
+    /* Esto sirve para dar un espacio entre las tareas. */
+    margin-bottom: 10px;
+    /* Esto sirve para que el cursor cambie a una mano. */
+    cursor: pointer;
+    /* Esto sirve para suavizar el cambio de color. */
+    transition: background-color 0.2s;
+}
+
+.tarea-item:hover {
+    /* Esto sirve para cambiar el color de fondo cuando el mouse está encima. */
+    background-color: #e9ecef;
+}
+
+.tarea-item.completada .texto-tarea {
+    /* Esto sirve para tachar el texto de una tarea completada. */
+    text-decoration: line-through;
+    /* Esto sirve para atenuar el color del texto de una tarea completada. */
+    color: #6c757d;
+}
+
+.texto-tarea {
+    /* Esto sirve para que el texto ocupe todo el espacio disponible. */
+    flex-grow: 1;
+    /* Esto sirve para dar un espacio a la izquierda del texto. */
+    margin-left: 15px;
+}
+
+.btn-eliminar {
+    /* Esto sirve para quitar el borde. */
+    border: none;
+    /* Esto sirve para dar un color de fondo rojo al botón. */
+    background-color: #dc3545;
+    /* Esto sirve para que el texto sea blanco. */
+    color: white;
+    /* Esto sirve para poner la 'X' en negrita. */
+    font-weight: bold;
+    /* Esto sirve para definir el ancho del botón. */
+    width: 30px;
+    /* Esto sirve para definir el alto del botón. */
+    height: 30px;
+    /* Esto sirve para hacer el botón perfectamente redondo. */
+    border-radius: 50%;
+    /* Esto sirve para que el cursor cambie a una mano. */
+    cursor: pointer;
+    /* Esto sirve para suavizar el cambio de color. */
+    transition: background-color 0.2s;
+    /* Esto sirve para evitar que el botón se encoja. */
+    flex-shrink: 0;
+}
+
+.btn-eliminar:hover {
+    /* Esto sirve para oscurecer el botón cuando el mouse está encima. */
+    background-color: #c82333;
+}
