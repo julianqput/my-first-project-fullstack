@@ -96,3 +96,4 @@ function sorteoLoteria(cantidadNumeros,min,max){
 
 const numerosSorteo = sorteoLoteria(6, 1, 49);
 console.log(`Los números ganadores del sorteo son: ${numerosSorteo}`);
+
