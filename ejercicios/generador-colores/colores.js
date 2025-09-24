@@ -5,7 +5,7 @@ console.log("¡Script del Generador de Colores cargado!");
 // ==========================================================================
 const body = document.querySelector('body');
 const displayColorRGB = document.querySelector('#color-display-rgb');
-const botonCambiarColor = document.querySelector('btn-cambiar-color');
+const botonCambiarColor = document.querySelector('#btn-cambiar-color');
 
 
 
@@ -18,16 +18,16 @@ const botonCambiarColor = document.querySelector('btn-cambiar-color');
 // 4. La función debe DEVOLVER (return) un string con el formato "rgb(rojo, verde, azul)".
 //    (Pista: Usa Template Literals: `rgb(${rojo}, ${verde}, ${azul})`).
 
-function generarColorAleatorioRGB(){
-    const rojo = Math.floor(Math.random()*256);
-    const verde = Math.floor(Math.random()*256);
-    const azul = Math.floor(Math.random()*256);
-    return `rgb(${rojo}, ${verde}, ${azul})`; 
+// --- PASO 2: CREAR LA FUNCIÓN PARA GENERAR UN COLOR ---
+function generarColorAleatorioRGB() {
+    const rojo = Math.floor(Math.random() * 256);
+    const verde = Math.floor(Math.random() * 256);
+    const azul = Math.floor(Math.random() * 256);
+    return `rgb(${rojo}, ${verde}, ${azul})`;
 }
 
 // --- PASO 3: AÑADIR EL EVENTO AL BOTÓN ---
-
-botonCambiarColor.addEventListener('click',function(){
+botonCambiarColor.addEventListener('click', function() {
     const nuevoColor = generarColorAleatorioRGB();
     body.style.backgroundColor = nuevoColor;
     displayColorRGB.textContent = nuevoColor;
@@ -40,21 +40,11 @@ botonCambiarColor.addEventListener('click',function(){
 // --- PASO 1: DATOS Y SELECCIÓN DE ELEMENTOS ---
 
 const paletaDeColores = [
-    {
-        nombre : "Rojo Pasión", hex: "#e74c3c"
-    },
-    {
-        nombre : "Azul Océano", hex: "#3498db"
-    },
-    {
-        nombre : "Verde Bosque", hex:"#2ecc71"
-    },
-    {
-        nombre: "Amarillo Sol", hex: "#f1c40f"
-    },
-    {
-        nombre: "Morado Real", hex: "#9b59b6"
-    }
+    { nombre: "Rojo Pasión", hex: "#e74c3c" },
+    { nombre: "Azul Océano", hex: "#3498db" },
+    { nombre: "Verde Bosque", hex: "#2ecc71" },
+    { nombre: "Amarillo Sol", hex: "#f1c40f" },
+    { nombre: "Morado Real", hex: "#9b59b6" }
 ];
 
 const displayColorPaleta = document.querySelector('#color-display-paleta');
