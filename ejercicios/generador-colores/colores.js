@@ -4,7 +4,7 @@ console.log("¡Script del Generador de Colores cargado!");
 //  EJERCICIO 1: GENERADOR DE COLORES RGB ALEATORIOS
 // ==========================================================================
 const body = document.querySelector('body');
-const displayColorRGB = document.querySelector('#color-displey-rgb');
+const displayColorRGB = document.querySelector('#color-display-rgb');
 const botonCambiarColor = document.querySelector('btn-cambiar-color');
 
 
