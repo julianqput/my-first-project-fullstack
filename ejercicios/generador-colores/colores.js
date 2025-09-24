@@ -58,7 +58,7 @@ const paletaDeColores = [
 ];
 
 const displayColorPaleta = document.querySelector('#color-display-paleta');
-const botonColorPaleta = document.querySelector('btn-color-paleta');
+const botonColorPaleta = document.querySelector('#btn-color-paleta');
 
 // --- PASO 2: AÑADIR EL EVENTO AL SEGUNDO BOTÓN ---
 
