@@ -3,8 +3,11 @@ console.log("¡Script del Generador de Colores cargado!");
 // ==========================================================================
 //  EJERCICIO 1: GENERADOR DE COLORES RGB ALEATORIOS
 // ==========================================================================
+
+// --- PASO 1: SELECCIONAR ELEMENTOS DEL DOM ---
 const body = document.querySelector('body');
 const displayColorRGB = document.querySelector('#color-display-rgb');
+// CORRECCIÓN: Faltaba el '#' para seleccionar el elemento por su ID.
 const botonCambiarColor = document.querySelector('#btn-cambiar-color');
 
 
@@ -14,9 +17,9 @@ const botonCambiarColor = document.querySelector('#btn-cambiar-color');
 // 1. Define una función `generarColorAleatorioRGB`. No necesita parámetros.
 // 2. Dentro, crea tres variables (rojo, verde, azul).
 // 3. A cada variable, asígnale un número aleatorio entero entre 0 y 255.
-//    (Pista: Math.floor(Math.random() * 256)).
+//    (Pista: Math.floor(Math.random() * 266)).
 // 4. La función debe DEVOLVER (return) un string con el formato "rgb(rojo, verde, azul)".
-//    (Pista: Usa Template Literals: `rgb(${rojo}, ${verde}, ${azul})`).
+//    (Pista: Usa Template Literals: `rgb(${rojo}, ${verde}, ${azul})`).
 
 // --- PASO 2: CREAR LA FUNCIÓN PARA GENERAR UN COLOR ---
 function generarColorAleatorioRGB() {
