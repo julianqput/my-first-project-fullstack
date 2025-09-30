@@ -27,4 +27,23 @@ const elementoImage = document.querySelector('#avatar-imagen');
 const elementoNombre = document.querySelector('#avatar-nombre');
 const botonCambiar = document.querySelector('#btn-cambiar-avatar');
 
+function cambiarAvatar(){
+    // 2. Genera un índice aleatorio.
+    const indiceAleatorio = Math.floor(Math.random()*avatares.length);
+    // 3. Selecciona el avatar usando el índice.
+    const avatarSeleccionado = avatares[indiceAleatorio];
+    // 4. Actualiza la imagen en la página.
+    elementoImage.src = avatarSeleccionado.ImagenSrc;
+    // 5. Actualiza el nombre en la página.
+    elementoNombre.textContent = avatarSeleccionado.nombre;
+}
 
+
+// ==========================================================================
+//  PASO 4: AÑADIR EL EVENTO AL BOTÓN
+// ==========================================================================
+// Guía Lógica:
+// 1. Añade un 'escuchador de eventos' de tipo 'click' al `botonCambiar`.
+// 2. Cuando el usuario haga clic, debe llamar a la función `cambiarAvatar`.
+
+botonCambiar.addEventListener('click', cambiarAvatar);
