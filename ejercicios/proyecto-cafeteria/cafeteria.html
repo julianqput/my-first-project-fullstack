@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Descubre el Espeial de Hñoy!</title>
+    <title>Café del Eje - El Especial de Hoy</title>
     <link rel="stylesheet" href="cafeteria.css">
 </head>
 <body>
-    <script src="cafeteria.js" type="text/javascript"></script>
+
+    <div class="contenedor">
+        <h1>El Especial Sorpresa de Café del Eje</h1>
+
+        <!-- Tarjeta que mostrará el producto especial del día -->
+        <div class="tarjeta-especial">
+            
+            <!-- Contenedor para la imagen del producto -->
+            <div class="imagen-producto">
+                <!-- La imagen se añadirá aquí con JavaScript -->
+                <img id="producto-imagen" src="" alt="Especial del día">
+            </div>
+
+            <!-- Contenido de texto del producto -->
+            <div class="contenido-producto">
+                <h2 id="producto-nombre">¡Bienvenido!</h2>
+                <p id="producto-descripcion">Haz clic en el botón de abajo para descubrir la delicia que hemos preparado para ti hoy.</p>
+            </div>
+        </div>
+
+        <!-- Botón para generar un nuevo especial -->
+        <button id="cambiar-especial">¡Descubre el Especial de Hoy!</button>
+    </div>
+
+    <!-- El script se enlaza al final para asegurar que todo el HTML se cargue primero -->
+    <script src="cafeteria.js"></script>
 </body>
 </html>
