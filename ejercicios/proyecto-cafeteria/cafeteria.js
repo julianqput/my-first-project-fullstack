@@ -25,14 +25,15 @@ const productos = [
 
 const elementoImage = document.querySelector('#producto-imagen');
 const elementoNombre = document.querySelector('#producto-nombre');
+const elementoDescripcion = document.querySelector('#producto-descripcion');
 const botonCambiar = document.querySelector('#cambiar-especial');
 
 function cambiarEspecial (){
     const indiceAleatorio = Math.floor(Math.random()*productos.length);
     const especialSeleccionado = productos[indiceAleatorio];
-    elementoImage.src = especialSeleccionado.ImagenSrc;
+    elementoImage.src = especialSeleccionado.imagen;
     elementoNombre.textContent = especialSeleccionado.nombre;
-
+    elementoDescripcion.textContent = especialSeleccionado.descripcion;
 }
 
 botonCambiar.addEventListener('click', cambiarEspecial);
