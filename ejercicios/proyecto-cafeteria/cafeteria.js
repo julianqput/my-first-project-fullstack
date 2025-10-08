@@ -9,7 +9,7 @@ const productos = [
     {
         nombre:"Torta de Chocolate de la Abuela",
         descripcion:"La receta secreta de la familia. Un bizcocho húmedo y una cobertura de chocolate que te hará feliz.",
-        imagen:"favicon/torta_de_chocolate.png"
+        imagen:"favicon/torta_de_chocolate.jpg"
     },
     {
         nombre:"Arequipe Latte",
@@ -19,7 +19,7 @@ const productos = [
     {
         nombre:"Pandebono Relleno",
         descripcion:"Nuestro pandebono tradicional, horneado al momento y relleno de queso mozzarella derretido.",
-        imagen:"favicon/pandebono.png"
+        imagen:"favicon/pandebono.jpg"
     }
 ]
 

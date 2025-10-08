@@ -9,3 +9,29 @@ body {
     padding: 20px;
 }
 
+.contenedor{
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 320px;
+}
+
+h1{
+    color: #333;
+    margin-top: 0;  
+}
+
+.imagen-producto{
+    margin: 20px 0;
+}
+
+#producto-imagen{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    border: 5px solid #007bff;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+}
