@@ -19,7 +19,9 @@ console.log("\n--- Ejercicio 1: Encontrar Producto por Nombre ---");
 
 function EncontrarProductoPorNombre(nombreProducto){
     for(let i=0;i<inventario.length;i++){
-        if
+        if(inventario[i].nombre === nombreProducto){
+            return inventario[i];
+        }
     }
-
+    return null;
 }
