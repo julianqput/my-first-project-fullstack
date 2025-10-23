@@ -29,3 +29,6 @@ function EncontrarProductoPorNombre(nombreProducto){
 
 const ProductoBuscado = EncontrarProductoPorNombre("Teclado Mecánico");
 console.log("Producto en  encontradro:", ProductoBuscado);
+
+const ProductoNoExiste = EncontrarProductoPorNombre("Silla gamer");
+console.log("Producto no encontrado", ProductoNoExiste);
