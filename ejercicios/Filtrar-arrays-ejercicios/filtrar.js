@@ -40,7 +40,7 @@ function obtenerAprobados(listaEstudiantes){
     for( let i = 0; i < listaEstudiantes.length; i++)
     {
         const estudiantesActual = listaEstudiantes[i];
-        if(estudiantes.nota >= 5)
+        if(estudiantesActual.nota >= 5)
         {
             aprobados.push(estudiantesActual);
         }
@@ -50,7 +50,7 @@ function obtenerAprobados(listaEstudiantes){
 
 
 // --- Zona de Prueba ---
-const estudiantesAprobados = obtenerAprobados (estudiantes);
+const estudiantesAprobados = obtenerAprobados(estudiantes);
 console.log("Estudiantes Aprobados: ",estudiantesAprobados);
 // Debería mostrar un array con Ana, Carlos y Sofía.
 
