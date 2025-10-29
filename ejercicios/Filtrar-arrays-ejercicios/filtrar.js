@@ -58,3 +58,61 @@ const listaVacia = [];
 const aprobadosDeListaVacia = obtenerAprobados(listaVacia);
 console.log("Aprobados de lista vacía:", aprobadosDeListaVacia);
 // Debería mostrar un array vacío [].
+
+
+console.log("\n --- ¡Mas Ejercicios Sobre filtrado de arrays");
+
+// ==========================================================================
+//  EJERCICIO 1: Filtrar Productos en Stock
+// ==========================================================================
+//  - Problema: Tienes una lista de productos de una tienda. Necesitas crear
+//    una función que devuelva una nueva lista solo con los productos
+//    que están disponibles en stock.
+// ==========================================================================
+
+const productos = [
+    {
+        id: 1, nombre:"Laptop", enStock:true
+    },
+    {
+        id: 2, nombre:"Mouse", enStock:false
+    },
+    {
+        id: 3, nombre: "Teclado", enStock:true
+    },
+    {
+        id: 4, nombre:"Monitor", enStock:true
+    },
+    {
+        id: 5, nombre: "Silla Gamer", enStock:false
+    }
+];
+
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función `filtrarEnStock` que acepte un parámetro `listaProductos`.
+// 2. Dentro, crea un array vacío llamado `disponibles`.
+// 3. Usa un bucle `for` para recorrer `listaProductos`.
+// 4. En cada vuelta, obtén el producto actual (ej: `const productoActual = ...`).
+// 5. Usa un `if` para verificar si la propiedad `enStock` del producto actual es `true`.
+//    (Pista: `if (productoActual.enStock === true)` o simplemente `if (productoActual.enStock)`).
+// 6. Si la condición es verdadera, añade el `productoActual` al array `disponibles` con `.push()`.
+// 7. Después del bucle, devuelve (return) el array `disponibles`.
+
+console.log("\n--- Ejercicio 1: Filtrar Productos en Stock ---");
+
+function filtrarEnStock(listaProductos){
+    const productoDis = [];
+    for(i=0; i < listaProductos.length; i++ ){
+        const listaActual = listaProductos[i];
+        if(listaActual.enStock == true){
+            productoDis.push(listaActual)
+        }
+    }
+    return productoDis;
+}
+
+// --- Zona de Pruebas ---
+const productosDisponibles = filtrarEnStock(productos);
+console.log("Productos Disponibles:", productosDisponibles);
+// Debería mostrar un array con Laptop, Teclado y Monitor.
