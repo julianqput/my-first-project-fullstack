@@ -116,3 +116,56 @@ function filtrarEnStock(listaProductos){
 const productosDisponibles = filtrarEnStock(productos);
 console.log("Productos Disponibles:", productosDisponibles);
 // Debería mostrar un array con Laptop, Teclado y Monitor.
+
+// ==========================================================================
+//  EJERCICIO 2: Filtrar Tareas Pendientes
+// ==========================================================================
+//  - Problema: Tienes una lista de tareas. Necesitas una función que devuelva
+//    una nueva lista solo con las tareas que NO están completadas.
+// ==========================================================================
+
+console.log("\n--Filtrar Tareas Pendientes---");
+
+const listaDeTareas = [
+    {
+        id: 10, descripcion: "Estudiar JavaScript", completada: true
+    },
+    {
+        id: 20, descripcion: "Hacer Ejercicio", completada: false
+    },
+    {
+        id: 30, descripcion:"Comprar viveres", completada: false
+    },
+    {
+        id: 40, descripcion:"Pagar Facturas", completada: true
+    }
+]
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función `filtrarPendientes` que acepte un parámetro `tareas`.
+// 2. Dentro, crea un array vacío llamado `pendientes`.
+// 3. Usa un bucle `for` para recorrer el array `tareas`.
+// 4. En cada vuelta, obtén la tarea actual.
+// 5. Usa un `if` para verificar si la propiedad `completada` de la tarea es `false`.
+//    (Pista: `if (tareaActual.completada === false)`).
+// 6. Si la condición es verdadera, añade la `tareaActual` al array `pendientes` con `.push()`.
+// 7. Después del bucle, devuelve (return) el array `pendientes`.
+
+function filtrarPendientes(tareas){
+    const pendientes = [];
+    for( let i=0; i < tareas.length; i++ )
+    {
+        const listaPendientes = tareas[i];
+        if(listaPendientes.completada === false)
+        {
+            pendientes.push(listaPendientes)
+        }
+    }
+    return pendientes;
+}
+
+
+// --- Zona de Pruebas ---
+const tareasPendientes = filtrarPendientes(listaDeTareas);
+console.log("Tareas Pendientes:", tareasPendientes);
+// Debería mostrar un array con "Hacer ejercicio" y "Comprar víveres".
