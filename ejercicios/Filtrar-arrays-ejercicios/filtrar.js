@@ -169,3 +169,57 @@ function filtrarPendientes(tareas){
 const tareasPendientes = filtrarPendientes(listaDeTareas);
 console.log("Tareas Pendientes:", tareasPendientes);
 // Debería mostrar un array con "Hacer ejercicio" y "Comprar víveres".
+
+
+// ==========================================================================
+//  ¡NUEVO! EJERCICIO 3: Filtrar por Categoría (string)
+// ==========================================================================
+//  - Problema: Tienes la lista de 'productos' de arriba. Necesitas una
+//    función que devuelva una nueva lista solo con los productos que
+//    pertenecen a una categoría específica.
+// ==========================================================================
+
+// --- Guía Lógica Paso a Paso ---
+// 1. Define una función `filtrarPorCategoria` que acepte DOS parámetros:
+//    `lista` (el array de productos) y `categoriaBuscada` (un string).
+// 2. Dentro, crea un array vacío llamado `productosEncontrados`.
+// 3. Usa un bucle `for` para recorrer `lista`.
+// 4. En cada vuelta, obtén el producto actual.
+// 5. Usa un `if` para verificar si la propiedad `categoria` del producto actual
+//    es ESTRICTAMENTE IGUAL (`===`) a `categoriaBuscada`.
+// 6. Si la condición es verdadera, añade el producto actual al array `productosEncontrados`.
+// 7. Después del bucle, devuelve (return) el array `productosEncontrados`.
+
+console.log("\n--- Ejercicio 3: Filtrar por Categoría ---");
+
+const inventario2 =[
+    {
+        id: 1, nombre:"Laptop Pro",precio:1200,categoria:"Electronicá"
+    },
+    {
+        id: 2, nombre:"Mouse Inalámbrico",precio:25,categoria:"Accesorios"
+    },
+    {
+        id: 3, nombre:"Teclado Mecánico",precio:80,categoria:"Accesorios"
+    },
+    {
+        id: 4, nombre:"Monitor 4K",precio:450,categoria:"Electrónica"
+    }
+]
+
+
+function filtrarPorCategoria(lista,categoriaBuscada){
+    const productosEncontrados = [];
+    for( let i = 0; i < lista.length; i++){
+        const productoActual = lista[i];
+        if(productoActual.categoria === categoriaBuscada){
+            productosEncontrados.push(productoActual)
+        }
+    }
+    return productosEncontrados
+}
+
+// --- Zona de Pruebas ---
+const accesorios = filtrarPorCategoria(inventario2, "Accesorios");
+console.log("Productos de 'Accesorios':", accesorios);
+// Debería mostrar un array con Mouse y Teclado.
