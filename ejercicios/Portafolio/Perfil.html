@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julián Quesada - Desarrollador Web</title>
+    <!-- Script de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Usamos la fuente 'Inter' como fuente principal */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Pequeño truco para el scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 0. BARRA DE NAVEGACIÓN FIJA -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-10">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo o Nombre -->
+                <a href="#" class="text-xl font-bold text-blue-600">Julián Quesada</a>
+                <!-- Links de Navegación -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#proyectos" class="text-gray-600 hover:text-blue-600 transition duration-300">Proyectos</a>
+                    <a href="#sobre-mi" class="text-gray-600 hover:text-blue-600 transition duration-300">Sobre Mí</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-blue-600 transition duration-300">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. SECCIÓN "HERO" (PRESENTACIÓN) -->
+    <section id="inicio" class="pt-32 pb-24 text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                Hola, soy Julián Quesada
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-700 font-medium mb-8">
+                Desarrollador Web enfocado en Lógica y JavaScript
+            </p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+                Construyo aplicaciones web interactivas y funcionales. Me apasiona transformar problemas lógicos en soluciones elegantes y eficientes usando HTML, CSS y JavaScript.
+            </p>
+            <!-- Botones de Llamada a la Acción -->
+            <div class="flex justify-center gap-4">
+                <a href="#proyectos" class="bg-blue-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+                    Ver mis Proyectos
+                </a>
+                <a href="#contacto" class="bg-gray-200 text-gray-800 font-medium py-3 px-8 rounded-lg hover:bg-gray-300 transition duration-300">
+                    Contactar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SECCIÓN "PROYECTOS" (LA MÁS IMPORTANTE) -->
+    <section id="proyectos" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Mis Proyectos</h2>
+            
+            <!-- Rejilla de Proyectos (Responsive) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                <!-- PROYECTO 1: CAFÉ DEL EJE (REEMPLAZA ESTO) -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/3498DB/FFFFFF?text=Café+del+Eje" alt="Proyecto Café del Eje" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Café del Eje - Especial del Día</h3>
+                        <p class="text-gray-600 mb-4">
+                            Landing page interactiva para una cafetería. Usa JavaScript (`Math.random`) para seleccionar y mostrar aleatoriamente un producto especial del día, manipulando el DOM.
+                        </p>
+                        <!-- Enlaces del Proyecto -->
+                        <div class="flex gap-4">
+                            <a href="https://julianqput.github.io/my-primer-proyecto-fullstack/ejercicios/proyecto-cafeteria/cafeteria.html" target="_blank" class="bg-blue-600 text-white font-medium py-2 px-5 rounded-md hover:bg-blue-700 transition duration-300">
+                                Ver Demo en Vivo
+                            </a>
+                            <a href="https://github.com/julianqput/my-primer-proyecto-fullstack/tree/main/ejercicios/proyecto-cafeteria" target="_blank" class="bg-gray-200 text-gray-800 font-medium py-2 px-5 rounded-md hover:bg-gray-300 transition duration-300">
+                                Ver Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 2: LISTA DE TAREAS (REEMPLAZA ESTO) -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/2ECC71/FFFFFF?text=App+de+Tareas" alt="Proyecto Lista de Tareas" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">App de Lista de Tareas (To-Do)</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aplicación interactiva para gestionar tareas. Permite añadir, eliminar y marcar tareas como completadas. Construida con manipulación del DOM (crear, añadir y eliminar elementos).
+                        </p>
+                        <!-- Enlaces del Proyecto -->
+                        <div class="flex gap-4">
+                            <a href="https://julianqput.github.io/my-primer-proyecto-fullstack/ejercicios/app-lista-tareas/index.html" target="_blank" class="bg-blue-600 text-white font-medium py-2 px-5 rounded-md hover:bg-blue-700 transition duration-300">
+                                Ver Demo en Vivo
+                            </a>
+                            <a href="https://github.com/julianqput/my-primer-proyecto-fullstack/tree/main/ejercicios/app-lista-tareas" target="_blank" class="bg-gray-200 text-gray-800 font-medium py-2 px-5 rounded-md hover:bg-gray-300 transition duration-300">
+                                Ver Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 3: GENERADOR DE CITAS (REEMPLAZA ESTO) -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/9B59B6/FFFFFF?text=Generador+de+Citas" alt="Proyecto Generador de Citas" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Generador de Citas Aleatorias</h3>
+                        <p class="text-gray-600 mb-4">
+                            Una aplicación simple que muestra una nueva cita inspiradora con cada clic. Práctica de Arrays de Objetos, `Math.random` y manipulación del DOM (`.textContent`).
+                        </p>
+                        <!-- Enlaces del Proyecto -->
+                        <div class="flex gap-4">
+                            <a href="https://julianqput.github.io/my-primer-proyecto-fullstack/ejercicios/generador-citas/index.html" target="_blank" class="bg-blue-600 text-white font-medium py-2 px-5 rounded-md hover:bg-blue-700 transition duration-300">
+                                Ver Demo en Vivo
+                            </a>
+                            <a href="https://github.com/julianqput/my-primer-proyecto-fullstack/tree/main/ejercicios/generador-citas" target="_blank" class="bg-gray-200 text-gray-800 font-medium py-2 px-5 rounded-md hover:bg-gray-300 transition duration-300">
+                                Ver Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PUEDES AÑADIR MÁS PROYECTOS AQUÍ -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN "SOBRE MÍ" -->
+    <section id="sobre-mi" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+            <!-- Columna de Imagen -->
+            <div class="md:col-span-1">
+                <img src="https://placehold.co/400x400/E8E8E8/999?text=Tu+Foto" alt="Foto de Julián Quesada" class="rounded-lg shadow-lg w-full max-w-xs mx-auto">
+            </div>
+            <!-- Columna de Texto -->
+            <div class="md:col-span-2">
+                <h2 class="text-3xl font-bold mb-4">Sobre Mí</h2>
+                <p class="text-gray-600 text-lg mb-4">
+                    ¡Hola! Soy Julián, un desarrollador web de Pereira, Colombia. Mi pasión es la tecnología y la resolución de problemas lógicos. Vengo de un fondo [menciona tu fondo anterior si es relevante] y encontré en la programación la herramienta perfecta para construir ideas.
+                </p>
+                <p class="text-gray-600 text-lg mb-4">
+                    Creo firmemente en el aprendizaje constante. Para mí, en el desarrollo, "todos los caminos llevan a Roma"; cada nuevo concepto, ya sea Flexbox, Grid o una función de JavaScript, es una nueva ruta para crear soluciones más eficientes y elegantes.
+                </p>
+                <p class="text-gray-600 text-lg">
+                    Actualmente estoy profundizando mis habilidades en JavaScript y buscando mi primera oportunidad para aportar valor a un equipo y seguir creciendo profesionalmente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECCIÓN "CONTACTO" -->
+    <section id="contacto" class="py-20 bg-white text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4">Hablemos</h2>
+            <p class="text-lg text-gray-600 mb-8">
+                Estoy buscando activamente mi primera oportunidad como desarrollador. Si crees que mi perfil encaja en tu equipo, me encantaría conectar.
+            </p>
+            <!-- Enlaces Sociales/Profesionales -->
+            <div class="flex justify-center gap-6">
+                <!-- Reemplaza '#' con tus enlaces reales -->
+                <a href="https://github.com/julianqput" target="_blank" class="text-blue-600 font-medium text-lg hover:underline">
+                    GitHub
+                </a>
+                <a href="#" target="_blank" class="text-blue-600 font-medium text-lg hover:underline">
+                    LinkedIn
+                </a>
+                <a href="mailto:tu-correo@gmail.com" class="text-blue-600 font-medium text-lg hover:underline">
+                    Correo Electrónico
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PIE DE PÁGINA -->
+    <footer class="text-center py-6 bg-gray-100">
+        <p class="text-gray-500">
+            Diseñado y construido por Julián Quesada
+        </p>
+    </footer>
+
+</body>
+</html>
