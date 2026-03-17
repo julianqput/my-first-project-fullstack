@@ -150,3 +150,15 @@ h1 {
     background: #fff;
     box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
 }
+
+
+#mensaje-personalizado {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 80%;
+    margin: 20px auto;
+    color: #6a6a6a;
+    /* Efecto de desvanecimiento para que combine con tus animaciones */
+    animation: fadeIn 2s ease-in-out;
+}

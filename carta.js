@@ -1,36 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Lógica del nombre del invitado desde la URL
+    // 1. OBTENER PARÁMETROS DE LA URL (Solo se declaran una vez)
     const urlParams = new URLSearchParams(window.location.search);
     let guestName = urlParams.get('guest');
+    const mensajeTexto = "Hoy comienza un capítulo lleno de magia en mi vida, y no sería lo mismo sin ti. ¡Te espero para celebrar mis XV años en una noche inolvidable!";
+
+    // 2. LÓGICA DE BIENVENIDA Y MENSAJE PERSONALIZADO
+    const nameElement = document.getElementById('guest-name');
+    const messageElement = document.getElementById('mensaje-personalizado');
 
     if (guestName) {
         guestName = decodeURIComponent(guestName);
-        document.getElementById('guest-name').innerText = guestName;
+        if (nameElement) nameElement.innerText = guestName;
     } else {
         guestName = "mi familia"; // Para el mensaje de WhatsApp
-        document.getElementById('guest-name').innerText = "Familia y Amigos";
+        if (nameElement) nameElement.innerText = "Familia y Amigos";
     }
 
-    // 2. Configuración de los 3 botones de WhatsApp
-    const msg = encodeURIComponent(`¡Hola! Confirmo mi asistencia para ${guestName}. ¡Muchas gracias! ✨`);
-
-    const phone1 = "573182231079"; // Reyes
-    const phone2 = "573142748069"; // Monica
-    const phone3 = "573193484647"; // Cristina
-
-    if(document.getElementById('whatsapp-btn-1')) {
-        document.getElementById('whatsapp-btn-1').href = `https://wa.me/${phone1}?text=${msg}`;
-    }
-    if(document.getElementById('whatsapp-btn-2')) {
-        document.getElementById('whatsapp-btn-2').href = `https://wa.me/${phone2}?text=${msg}`;
-    }
-    if(document.getElementById('whatsapp-btn-3')) {
-        document.getElementById('whatsapp-btn-3').href = `https://wa.me/${phone3}?text=${msg}`;
+    if (messageElement) {
+        messageElement.innerText = mensajeTexto;
     }
 
-    // 3. Lógica del Contador (Para el 24 de Junio de 2026)
+    // 3. CONFIGURACIÓN DE LOS 3 BOTONES DE WHATSAPP
+    const msgWhatsApp = encodeURIComponent(`¡Hola! Confirmo mi asistencia para ${guestName}. ¡Muchas gracias! ✨`);
+    
+    const phones = {
+        reyes: "573182231079",
+        monica: "573142748069",
+        cristina: "573193484647"
+    };
+
+    const btn1 = document.getElementById('whatsapp-btn-1');
+    const btn2 = document.getElementById('whatsapp-btn-2');
+    const btn3 = document.getElementById('whatsapp-btn-3');
+
+    if (btn1) btn1.href = `https://wa.me/${phones.reyes}?text=${msgWhatsApp}`;
+    if (btn2) btn2.href = `https://wa.me/${phones.monica}?text=${msgWhatsApp}`;
+    if (btn3) btn3.href = `https://wa.me/${phones.cristina}?text=${msgWhatsApp}`;
+
+    // 4. LÓGICA DEL CONTADOR
     const eventDate = new Date('June 24, 2026 20:00:00').getTime();
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minsEl = document.getElementById('minutes');
 
     setInterval(() => {
         const now = new Date().getTime();
@@ -40,14 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-        if(document.getElementById('days')) {
-            document.getElementById('days').innerText = d < 10 ? '0'+d : d;
-            document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
-            document.getElementById('minutes').innerText = m < 10 ? '0'+m : m;
-        }
+        if (daysEl) daysEl.innerText = d < 10 ? '0' + d : d;
+        if (hoursEl) hoursEl.innerText = h < 10 ? '0' + h : h;
+        if (minsEl) minsEl.innerText = m < 10 ? '0' + m : m;
     }, 1000);
 
-    // 4. Generador de Brillos
+    // 5. BRILLOS Y ANIMACIONES
     function createSparkle() {
         const s = document.createElement('div');
         s.classList.add('sparkle');
@@ -57,9 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(s);
         setTimeout(() => s.remove(), 5000);
     }
-    setInterval(createSparkle, 300);
+    setInterval(createSparkle, 400);
 
-    // 5. Observador para animaciones al hacer scroll
     const animatedElements = document.querySelectorAll('.animated');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
