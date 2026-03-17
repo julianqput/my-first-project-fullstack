@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. LÓGICA DE BIENVENIDA Y MENSAJE PERSONALIZADO
     const nameElement = document.getElementById('guest-name');
-    const messageElement = document.getElementById('mensaje-personalizado');
+    
 
     if (guestName) {
         guestName = decodeURIComponent(guestName);
