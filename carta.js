@@ -1,28 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Lógica para el nombre del invitado
-    const urlParams = new URLSearchParams(window.location.search);
-    let guestName = urlParams.get('guest');
+function generarLink() {
+    const nombre = document.getElementById('nombreInvitado').value;
+    if (!nombre) return alert("Escribe un nombre");
 
-    if (guestName) {
-        guestName = decodeURIComponent(guestName);
-        document.getElementById('guest-name').innerText = guestName;
-    }
-
-    // 2. Configuración del Botón de WhatsApp
-    const myPhone = "573142748069"; // Tu número de contacto
-    const whatsappBtn = document.getElementById('whatsapp-btn');
-    const msg = `¡Hola! Confirmo mi asistencia para ${guestName || "mi familia"}. ¡Muchas gracias!`;
-    whatsappBtn.href = `https://wa.me/${myPhone}?text=${encodeURIComponent(msg)}`;
-
-    // 3. Animaciones al Scroll
-    const animatedElements = document.querySelectorAll('.animated');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show-animation');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    animatedElements.forEach(el => observer.observe(el));
-});
+    // TU URL BASE
+    const urlBase = "https://julianqput.github.io/my-first-project-fullstack/index.html";
+    
+    // Creamos el link personalizado
+    const link = `${urlBase}?guest=${encodeURIComponent(nombre)}`;
+    
+    // Mostrar resultado
+    document.getElementById('resultado').style.display = 'block';
+    document.getElementById('linkFinal').innerText = link;
+    
+    // Configurar mensaje de WhatsApp
+    const mensaje = encodeURIComponent(`¡Hola! Te compartimos nuestra invitación especial para los 15 años de Raquel. ¡Te esperamos! ✨\n\nMira la invitación aquí: ${link}`);
+    document.getElementById('btnWhatsApp').href = `https://wa.me/?text=${mensaje}`;
+}

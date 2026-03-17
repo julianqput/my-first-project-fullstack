@@ -1,114 +1,44 @@
-/* Estilos Generales */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #4A4A4A;
-    background-color: #fdfcfc;
+body { 
+    font-family: sans-serif; 
+    background: #fdf2f4; 
+    padding: 20px; 
+    text-align: center; 
 }
-
-.main-container {
-    max-width: 500px;
-    margin: 0 auto;
-    background: linear-gradient(180deg, #FDE8E9 0%, #FDE8E9 40%, #ffffff 40%, #ffffff 100%);
-    text-align: center;
-    padding-bottom: 40px;
+.box { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    max-width: 500px; 
+    margin: auto; 
 }
-
-
-.main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
-    margin-bottom: 0;
-    padding-top: 40px;
+input { 
+    width: 90%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
 }
-
-.subtitle {
-    letter-spacing: 4px;
-    font-size: 0.9rem;
-    color: #D4AF37;
-    margin-top: -10px;
+button { 
+    background: #D4AF37; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
 }
-
-/* SECCIÓN DE LA FOTO Y MARCOS */
-.photo-section {
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
+.result { 
+    margin-top: 20px; 
+    padding: 10px; 
+    border: 1px dashed #D4AF37; 
+    display: none; 
+    word-break: break-all; 
 }
-
-.elegant-borders {
-    position: relative;
-    padding: 15px;
-}
-
-.quince-photo {
-    width: 280px;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 5px;
-    position: relative;
-    z-index: 5;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.gold-frame {
-    position: absolute;
-    border: 2px solid #D4AF37;
-    border-radius: 5px;
-    pointer-events: none;
-}
-
-.frame-1 {
-    top: 5px; left: 5px; right: 5px; bottom: 5px;
-    transform: rotate(-2deg);
-    z-index: 1;
-}
-
-.frame-2 {
-    top: 15px; left: 15px; right: 15px; bottom: 15px;
-    transform: rotate(3deg);
-    z-index: 2;
-}
-
-/* Tarjetas de Información */
-.info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 20px;
-}
-
-.card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border: 1px solid #f2f2f2;
-}
-
-.icon { font-size: 1.5rem; display: block; margin-bottom: 10px; }
-
-
-.rsvp-btn {
-    display: inline-block;
-    background: linear-gradient(90deg, #E6CFA0 0%, #D4AF37 100%);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 30px;
-    box-shadow: 0 5px 15px rgba(212,175,55,0.4);
-}
-
-/* Animaciones */
-.animated {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-}
-
-.show-animation {
-    opacity: 1;
-    transform: translateY(0);
+a { 
+    color: #25D366; 
+    font-weight: bold; 
+    text-decoration: none; 
+    display: block; 
+    margin-top: 10px; 
 }
