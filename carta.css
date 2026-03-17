@@ -1,84 +1,111 @@
-:root {
-    --gold: #D4AF37;
-    --pink: #FADADD;
-    --dark-gold: #B8860B;
-    --white: #FFFFFF;
-}
+/* Importar una fuente elegante para los títulos */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: #FFF9F9;
-    overflow-x: hidden;
-}
-
-.fancy-text { font-family: 'Great Vibes', cursive; font-size: 3.5rem; }
-
-/* Loader */
-#loader {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: white; display: flex; justify-content: center; align-items: center;
-    z-index: 999; transition: opacity 1s ease;
-}
-
-/* Efectos de Movimiento (Reveal al Scroll) */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1.2s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Diseño Adaptable (Desktop vs Mobile) */
-.details-section {
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: linear-gradient(135deg, #fdf2f4 0%, #fae1e6 100%); 
+    padding: 40px 20px; 
+    margin: 0;
+    color: #4a4a4a;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 50px 20px;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    text-align: center;
-    width: 300px; /* Tamaño PC */
-    border-bottom: 4px solid var(--gold);
-    transition: transform 0.3s;
+.box { 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 40px; 
+    border-radius: 20px; 
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); 
+    max-width: 450px; 
+    width: 100%;
+    border: 1px solid rgba(214, 175, 55, 0.3);
 }
 
-.card:hover { transform: scale(1.05); }
-
-/* Celulares */
-@media (max-width: 768px) {
-    .fancy-text { font-size: 2.5rem; }
-    .card { width: 100%; } /* Tarjetas a pantalla completa en móvil */
-    .hero { height: 70vh; }
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
-/* Botón Interactivo */
-.btn-primary {
-    display: inline-block;
-    padding: 15px 40px;
-    background: var(--gold);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-    animation: pulse 2s infinite;
+p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 25px;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+input { 
+    width: 100%; 
+    padding: 12px 15px; 
+    margin: 10px 0; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 8px; 
+    box-sizing: border-box; /* Para que el padding no ensanche el input */
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #D4AF37;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+}
+
+button { 
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    color: #44340a; 
+    border: none; 
+    padding: 15px 25px; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(189, 149, 63, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(189, 149, 63, 0.4);
+}
+
+.result { 
+    margin-top: 30px; 
+    padding: 20px; 
+    border: 1.5px dashed #D4AF37; 
+    border-radius: 12px;
+    background-color: #fffdf9;
+    animation: fadeIn 0.5s ease;
+}
+
+#linkFinal {
+    font-size: 0.8rem;
+    color: #888;
+    display: block;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+#btnWhatsApp { 
+    background-color: #25D366;
+    color: white; 
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+#btnWhatsApp:hover {
+    background-color: #1ebe57;
+}
+
+/* Animación para que aparezca suavemente */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
