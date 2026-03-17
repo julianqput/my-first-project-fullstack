@@ -14,7 +14,7 @@ body {
     padding-bottom: 40px;
 }
 
-/* Títulos */
+
 .main-title {
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
@@ -88,7 +88,7 @@ body {
 
 .icon { font-size: 1.5rem; display: block; margin-bottom: 10px; }
 
-/* Botón WhatsApp */
+
 .rsvp-btn {
     display: inline-block;
     background: linear-gradient(90deg, #E6CFA0 0%, #D4AF37 100%);
