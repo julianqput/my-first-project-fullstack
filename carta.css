@@ -1,250 +1,114 @@
-/* --- Variables de Color y Fuentes --- */
-:root {
-    --bg-color: #FFF8F0; /* Crema muy suave */
-    --main-text: #444;    /* Gris oscuro elegante */
-    --accent-pink: #FFD1DC; /* Rosa pastel suave */
-    --accent-gold: #D4AF37; /* Dorado satinado */
-    --font-fancy: 'Great Vibes', cursive; /* Para títulos */
-    --font-main: 'Poppins', sans-serif;    /* Para texto normal */
-}
-
-/* --- Estilos Globales --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos Generales */
 body {
-    font-family: var(--font-main);
-    background-color: var(--bg-color);
-    color: var(--main-text);
-    line-height: 1.6;
-    overflow-x: hidden; /* Evita scroll horizontal */
-    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #4A4A4A;
+    background-color: #fdfcfc;
 }
 
-section, header, footer {
-    padding: 40px 20px;
+.main-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #FDE8E9 0%, #FDE8E9 40%, #ffffff 40%, #ffffff 100%);
     text-align: center;
+    padding-bottom: 40px;
 }
 
-h2 {
-    font-family: var(--font-fancy);
-    color: var(--accent-gold);
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-/* --- Títulos Especiales --- */
+/* Títulos */
 .main-title {
-    font-family: var(--font-fancy);
-    font-size: 5rem;
-    color: var(--accent-gold);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin-bottom: 0;
+    padding-top: 40px;
 }
 
-.guest-name-text {
-    font-size: 2.5rem;
-    color: var(--main-text);
-    font-weight: 600;
-    margin: 10px 0;
+.subtitle {
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    color: #D4AF37;
+    margin-top: -10px;
 }
 
-/* --- Sección Hero/Encabezado --- */
-.hero {
-    height: 100vh; /* Ocupa toda la pantalla */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #fff 0%, var(--accent-pink) 100%);
-}
-
-.elegant-border {
-    border: 3px solid var(--accent-gold);
-    padding: 40px;
-    border-radius: 15px;
-    position: relative;
-    max-width: 80%;
-}
-
-.divider {
-    font-size: 2rem;
-    color: var(--accent-gold);
-    margin-top: 20px;
-}
-
-/* --- Sección Foto con Marco Dorado --- */
+/* SECCIÓN DE LA FOTO Y MARCOS */
 .photo-section {
     display: flex;
     justify-content: center;
-    background-color: #fff;
+    padding: 30px 0;
 }
 
-.photo-frame {
-    border: 10px solid var(--accent-gold);
+.elegant-borders {
+    position: relative;
     padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .quince-photo {
-    max-width: 300px;
-    border-radius: 2px;
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 5px;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* --- Sección Info: Tarjetas Minimalistas --- */
-.info-section {
-    background-color: #fff;
+.gold-frame {
+    position: absolute;
+    border: 2px solid #D4AF37;
+    border-radius: 5px;
+    pointer-events: none;
 }
 
-.info-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
+.frame-1 {
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    transform: rotate(-2deg);
+    z-index: 1;
+}
+
+.frame-2 {
+    top: 15px; left: 15px; right: 15px; bottom: 15px;
+    transform: rotate(3deg);
+    z-index: 2;
+}
+
+/* Tarjetas de Información */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
 }
 
 .card {
     background: #fff;
-    border: 1px solid rgba(212, 175, 55, 0.3); /* Dorado muy tenue */
-    padding: 25px;
-    border-radius: 10px;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f2f2f2;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Movimiento suave al hover */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+.icon { font-size: 1.5rem; display: block; margin-bottom: 10px; }
 
-.card .icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    color: var(--accent-gold);
-    margin-bottom: 10px;
-}
-
-/* --- Botón del Mapa --- */
-.map-btn {
-    display: inline-block;
-    margin-top: 15px;
-    text-decoration: none;
-    color: var(--accent-gold);
-    border: 1px solid var(--accent-gold);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-}
-
-.map-btn:hover {
-    background-color: var(--accent-gold);
-    color: #fff;
-}
-
-/* --- Sección RSVP/Footer --- */
-.rsvp-section {
-    background-color: var(--accent-pink);
-    color: #fff;
-}
-
-.rsvp-section h3 {
-    font-family: var(--font-fancy);
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.rsvp-section p {
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-/* --- Botón RSVP Elegante --- */
+/* Botón WhatsApp */
 .rsvp-btn {
     display: inline-block;
-    background-color: #fff;
-    color: #333;
+    background: linear-gradient(90deg, #E6CFA0 0%, #D4AF37 100%);
+    color: white;
     padding: 15px 30px;
+    border-radius: 50px;
     text-decoration: none;
-    border-radius: 30px;
     font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(212,175,55,0.4);
 }
 
-.rsvp-btn:hover {
-    background-color: var(--accent-gold);
-    color: #fff;
-    transform: scale(1.05);
-}
-
-/* --- Animaciones de Carga (Movimiento al Scroll) --- */
+/* Animaciones */
 .animated {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
 }
 
 .show-animation {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* --- Responsive (Para celulares) --- */
-@media (max-width: 600px) {
-    .elegant-border {
-        padding: 20px;
-        max-width: 95%;
-    }
-    .main-title {
-        font-size: 3.5rem;
-    }
-    .guest-name-text {
-        font-size: 1.8rem;
-    }
-    h2 {
-        font-size: 2.2rem;
-    }
-}
-
-.photo-section {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.photo-frame {
-    background: white;
-    padding: 10px; /* Esto crea un borde blanco tipo fotografía antigua */
-    border: 3px solid #D4AF37; /* El toque dorado */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
-    border-radius: 5px;
-    transition: transform 0.5s ease; /* Para interactividad */
-}
-
-/* Efecto interactivo al pasar el mouse (PC) o tocar (Celular) */
-.photo-frame:hover {
-    transform: scale(1.03) rotate(1deg);
-}
-
-.quince-photo {
-    display: block;
-    width: 100%;
-    max-width: 350px; /* Tamaño ideal para que no se vea gigante en PC */
-    height: auto;
-    border-radius: 2px;
-}
-
-/* Ajuste específico para celulares pequeños */
-@media (max-width: 480px) {
-    .quince-photo {
-        max-width: 280px;
-    }
 }

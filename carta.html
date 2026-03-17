@@ -2,56 +2,66 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Panel de Invitados - 15 Años</title>
-    <style>
-        body { font-family: sans-serif; background: #fdf2f4; padding: 20px; text-align: center; }
-        .box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
-        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
-        button { background: #D4AF37; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .result { margin-top: 20px; padding: 10px; border: 1px dashed #D4AF37; display: none; word-break: break-all; }
-        a { color: #25D366; font-weight: bold; text-decoration: none; display: block; margin-top: 10px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Julieth Raquel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="box">
-        <h2>Generador de Invitaciones</h2>
-        <p>Escribe el nombre de la familia o invitado:</p>
-        <input type="text" id="nombreInvitado" placeholder="Ej: Familia Quesada Pinzón">
-        <button onclick="generarLink()">Generar Invitación</button>
+    <div class="main-container">
+        <header class="hero animated">
+            <h1 class="main-title">Raquel</h1>
+            <p class="subtitle">QUINCEAÑERA</p>
+        </header>
 
         <section class="photo-section animated">
-            <div class="photo-frame">
-                <img src="img/foto.jpg" alt="La Quinceañera" class="quince-photo">
+            <div class="elegant-borders">
+                <div class="gold-frame frame-1"></div>
+                <div class="gold-frame frame-2"></div>
+                <img src="foto.jpg" alt="La Quinceañera" class="quince-photo">
             </div>
         </section>
 
-        <div id="resultado" class="result">
-            <p>Link para enviar:</p>
-            <span id="linkFinal"></span>
-            <a id="btnWhatsApp" target="_blank">📲 Enviar por WhatsApp</a>
-        </div>
+        <section class="welcome-section animated">
+            <p>¡Estás cordialmente invitado/a,</p>
+            <h2 id="guest-name">Querido Invitado</h2>
+            <p>a compartir este día mágico conmigo!</p>
+        </section>
+
+        <section class="info-section animated">
+            <h3 class="details-title">Detalles del Evento</h3>
+            <div class="info-grid">
+                <div class="card">
+                    <span class="icon">📅</span>
+                    <h3>Fecha</h3>
+                    <p>Miércoles, 24 de Junio</p>
+                </div>
+                <div class="card">
+                    <span class="icon">⏰</span>
+                    <h3>Hora Recepción</h3>
+                    <p>8:00 PM</p>
+                </div>
+                <div class="card">
+                    <span class="icon">📍</span>
+                    <h3>Lugar</h3>
+                    <p>Finca el Páramo Morella</p>
+                </div>
+                <div class="card">
+                    <span class="icon">👗</span>
+                    <h3>Vestimenta</h3>
+                    <p>Formal</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="rsvp-section animated">
+            <a id="whatsapp-btn" href="#" target="_blank" class="rsvp-btn">
+                Confirmar Asistencia (WhatsApp)
+            </a>
+        </footer>
     </div>
 
-    <script>
-        function generarLink() {
-            const nombre = document.getElementById('nombreInvitado').value;
-            if (!nombre) return alert("Escribe un nombre");
-
-            // TU URL BASE (Asegúrate de que sea esta)
-            const urlBase = "https://julianqput.github.io/my-first-project-fullstack/index.html";
-            
-            // Creamos el link personalizado
-            const link = `${urlBase}?guest=${encodeURIComponent(nombre)}`;
-            
-            // Mostrar resultado
-            document.getElementById('resultado').style.display = 'block';
-            document.getElementById('linkFinal').innerText = link;
-            
-            // Configurar mensaje de WhatsApp
-            const mensaje = encodeURIComponent(`¡Hola! Te compartimos nuestra invitación especial para los 15 años de Raquel. ¡Te esperamos! ✨\n\nMira la invitación aquí: ${link}`);
-            document.getElementById('btnWhatsApp').href = `https://wa.me/?text=${mensaje}`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

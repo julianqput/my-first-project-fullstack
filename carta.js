@@ -1,65 +1,28 @@
-// Espera a que cargue todo el documento
 document.addEventListener('DOMContentLoaded', () => {
-
-    /* --- PARTE 1: Personalización del Nombre --- */
-    
-    // 1. Obtiene los parámetros de la URL (la parte después del '?')
+    // 1. Lógica para el nombre del invitado
     const urlParams = new URLSearchParams(window.location.search);
-    
-    // 2. Busca el parámetro 'guest' (invitado)
     let guestName = urlParams.get('guest');
-    
-    // 3. Si existe, limpia el nombre y actualiza el HTML
+
     if (guestName) {
-        // Reemplaza guiones bajos por espacios y lo limpia
-        guestName = decodeURIComponent(guestName).trim();
-        
-        // Selecciona el elemento HTML y cambia su texto
-        const guestNameElement = document.getElementById('guest-name');
-        guestNameElement.textContent = guestName;
-        
-        console.log(`Invitación personalizada para: ${guestName}`);
-    } else {
-        // Si no hay nombre en la URL, se queda el por defecto o uno genérico
-        console.log('No se proporcionó nombre de invitado en la URL.');
+        guestName = decodeURIComponent(guestName);
+        document.getElementById('guest-name').innerText = guestName;
     }
 
-    /* --- PARTE 2: Configuración del Botón de WhatsApp --- */
-    
-    // Cambia esto por TU número de celular (con código de país sin '+')
-    const myPhoneNumber = "573142748069"; // Usando el de Monica de la imagen
-
+    // 2. Configuración del Botón de WhatsApp
+    const myPhone = "573142748069"; // Tu número de contacto
     const whatsappBtn = document.getElementById('whatsapp-btn');
-    
-    // Prepara el mensaje automático
-    const finalName = guestName ? guestName : "un invitado"; // Si no hay nombre, usa genérico
-    const message = `¡Hola! Confirmo mi asistencia para ${finalName}. ¡Estamos muy emocionados! 🎉`;
-    
-    // Crea la URL final para WhatsApp (codificada correctamente)
-    const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
-    
-    // Asigna la URL al botón
-    whatsappBtn.setAttribute('href', whatsappUrl);
+    const msg = `¡Hola! Confirmo mi asistencia para ${guestName || "mi familia"}. ¡Muchas gracias!`;
+    whatsappBtn.href = `https://wa.me/${myPhone}?text=${encodeURIComponent(msg)}`;
 
-
-    /* --- PARTE 3: Animaciones Simples al Scroll --- */
-    
-    // Selecciona todas las secciones con la clase 'animated'
+    // 3. Animaciones al Scroll
     const animatedElements = document.querySelectorAll('.animated');
-
-    function checkScroll() {
-        const triggerBottom = window.innerHeight / 5 * 4; // Punto de activación (80% de la pantalla)
-
-        animatedElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-
-            if (elementTop < triggerBottom) {
-                element.classList.add('show-animation'); // Añade clase que activa CSS
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-animation');
             }
         });
-    }
+    }, { threshold: 0.1 });
 
-    // Ejecuta al cargar y al hacer scroll
-    window.addEventListener('scroll', checkScroll);
-    checkScroll(); // Activa las que ya están visibles al inicio
+    animatedElements.forEach(el => observer.observe(el));
 });
