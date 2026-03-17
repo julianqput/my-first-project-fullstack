@@ -34,3 +34,30 @@ h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #333; }
 
 .animated { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
 .show-animation { opacity: 1; transform: translateY(0); }
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Uno debajo del otro */
+    gap: 15px;
+    padding: 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1.5px solid #D4AF37; /* Borde dorado */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: scale(1.03); /* Se agranda un poquito al tocarlo */
+}
+
+.card-highlight {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
