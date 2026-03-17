@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Obtener nombre de la URL
+    
+    // 1. Lógica del nombre del invitado desde la URL
     const urlParams = new URLSearchParams(window.location.search);
     let guestName = urlParams.get('guest');
 
@@ -7,32 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
         guestName = decodeURIComponent(guestName);
         document.getElementById('guest-name').innerText = guestName;
     } else {
+        guestName = "mi familia"; // Para el mensaje de WhatsApp
         document.getElementById('guest-name').innerText = "Familia y Amigos";
     }
 
-    // 2. Configurar WhatsApp
-    const myPhone = "573142748069"; 
-    const whatsappBtn = document.getElementById('whatsapp-btn');
-    const finalName = guestName || "mi familia";
-    const msg = `¡Hola! Confirmo mi asistencia para ${finalName}. ¡Muchas gracias por la invitación! ✨`;
-    
-    whatsappBtn.href = `https://wa.me/${myPhone}?text=${encodeURIComponent(msg)}`;
+    // 2. Configuración de los 3 botones de WhatsApp
+    const msg = encodeURIComponent(`¡Hola! Confirmo mi asistencia para ${guestName}. ¡Muchas gracias! ✨`);
 
-    // 3. Observador para animaciones
-    const animatedElements = document.querySelectorAll('.animated');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show-animation');
-            }
-        });
-    }, { threshold: 0.1 });
+    const phone1 = "573182231079"; // Reyes
+    const phone2 = "573142748069"; // Monica
+    const phone3 = "573193484647"; // Cristina
 
-    animatedElements.forEach(el => observer.observe(el));
-});
+    if(document.getElementById('whatsapp-btn-1')) {
+        document.getElementById('whatsapp-btn-1').href = `https://wa.me/${phone1}?text=${msg}`;
+    }
+    if(document.getElementById('whatsapp-btn-2')) {
+        document.getElementById('whatsapp-btn-2').href = `https://wa.me/${phone2}?text=${msg}`;
+    }
+    if(document.getElementById('whatsapp-btn-3')) {
+        document.getElementById('whatsapp-btn-3').href = `https://wa.me/${phone3}?text=${msg}`;
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // --- Lógica del Contador ---
+    // 3. Lógica del Contador (Para el 24 de Junio de 2026)
     const eventDate = new Date('June 24, 2026 20:00:00').getTime();
 
     setInterval(() => {
@@ -43,12 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-        document.getElementById('days').innerText = d < 10 ? '0'+d : d;
-        document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
-        document.getElementById('minutes').innerText = m < 10 ? '0'+m : m;
+        if(document.getElementById('days')) {
+            document.getElementById('days').innerText = d < 10 ? '0'+d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
+            document.getElementById('minutes').innerText = m < 10 ? '0'+m : m;
+        }
     }, 1000);
 
-    // --- Generador de Brillos (Actividad) ---
+    // 4. Generador de Brillos
     function createSparkle() {
         const s = document.createElement('div');
         s.classList.add('sparkle');
@@ -59,4 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => s.remove(), 5000);
     }
     setInterval(createSparkle, 300);
+
+    // 5. Observador para animaciones al hacer scroll
+    const animatedElements = document.querySelectorAll('.animated');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-animation');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    animatedElements.forEach(el => observer.observe(el));
 });
