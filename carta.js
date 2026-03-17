@@ -1,18 +1,35 @@
-function generarLink() {
-    const nombre = document.getElementById('nombreInvitado').value;
-    if (!nombre) return alert("Escribe un nombre");
+window.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Quitar el cargador después de 2 segundos
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 1000);
+    }, 2000);
 
-    // TU URL BASE
-    const urlBase = "https://julianqput.github.io/my-first-project-fullstack/index.html";
-    
-    // Creamos el link personalizado
-    const link = `${urlBase}?guest=${encodeURIComponent(nombre)}`;
-    
-    // Mostrar resultado
-    document.getElementById('resultado').style.display = 'block';
-    document.getElementById('linkFinal').innerText = link;
-    
-    // Configurar mensaje de WhatsApp
-    const mensaje = encodeURIComponent(`¡Hola! Te compartimos nuestra invitación especial para los 15 años de Raquel. ¡Te esperamos! ✨\n\nMira la invitación aquí: ${link}`);
-    document.getElementById('btnWhatsApp').href = `https://wa.me/?text=${mensaje}`;
-}
+    // 2. Personalización del Invitado por URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestName = urlParams.get('guest') || "Familia Especial";
+    document.getElementById('guest-name').textContent = decodeURIComponent(guestName);
+
+    // 3. Configurar WhatsApp dinámico
+    const phone = "573142748069";
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    const text = `¡Hola! Confirmo mi asistencia para ${guestName}. ✨`;
+    whatsappBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+    // 4. Efecto de aparición al hacer Scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    const showOnScroll = () => {
+        revealElements.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll(); // Ejecutar una vez al inicio
+});
