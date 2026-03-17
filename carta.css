@@ -99,3 +99,54 @@ h1 {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Brillos flotantes */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.sparkle {
+    position: fixed;
+    background: radial-gradient(circle, #fcf6ba 0%, rgba(255,255,255,0) 70%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Estilo del Contador */
+.countdown {
+    background: rgba(212, 175, 55, 0.1);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #D4AF37;
+}
+
+#timer {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Playfair Display', serif;
+}
+
+#timer span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b38728;
+    display: block;
+}
+
+/* Efecto en tarjetas de información */
+.info-card {
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
