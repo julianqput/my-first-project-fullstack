@@ -2,163 +2,35 @@
 
 body { 
     font-family: 'Poppins', sans-serif; 
-    background: linear-gradient(135deg, #fdf2f4 0%, #fae1e6 100%); 
-    margin: 0;
-    color: #4a4a4a;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+    background: #fdf2f4; 
+    margin: 0; padding: 0; 
+    overflow-x: hidden;
 }
 
-.container { 
-    background: white; 
-    padding: 20px; 
-    max-width: 450px; 
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+.container {
+    max-width: 450px; margin: 0 auto; background: white;
+    padding: 30px 20px; text-align: center;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    color: #333;
-}
+h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #333; }
+#guest-name { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: 1.8rem; margin: 10px 0; }
+#mensaje-personalizado { font-size: 0.95rem; color: #666; font-style: italic; padding: 0 15px; }
 
-#guest-name {
-    font-family: 'Playfair Display', serif;
-    color: #D4AF37;
-    font-size: 2rem;
-    margin: 10px 0;
-}
+.photo-frame { border: 2px solid #D4AF37; padding: 10px; margin: 20px auto; width: 80%; }
+.photo-frame img { width: 100%; display: block; }
 
-.photo-frame {
-    margin: 20px auto;
-    border: 2px solid #D4AF37;
-    padding: 8px;
-    position: relative;
-    width: 85%;
-}
-
-.photo-frame img {
-    width: 100%;
-    display: block;
-}
-
-.details {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-}
-
-.info-card {
-    background: #fffafb;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.info-card h3 {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    color: #888;
-}
-
-.btn-mapa {
-    color: #D4AF37;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 0.8rem;
-}
+.countdown { background: #fffaf0; border: 1px solid #D4AF37; border-radius: 15px; padding: 15px; margin: 20px 0; }
+#timer { display: flex; justify-content: space-around; font-weight: bold; color: #b38728; }
 
 .btn-confirm { 
-    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-    color: #44340a; 
-    border: none; 
-    padding: 18px; 
-    border-radius: 50px; 
-    display: block;
-    text-decoration: none;
-    font-weight: bold; 
-    margin: 20px auto;
-    text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(189, 149, 63, 0.3);
+    display: block; background: linear-gradient(to right, #bf953f, #fcf6ba, #aa771c);
+    color: #44340a; text-decoration: none; padding: 15px; border-radius: 50px; 
+    font-weight: bold; margin: 10px 0; text-transform: uppercase; font-size: 0.8rem;
 }
 
-/* --- ANIMACIONES --- */
-.animated {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-}
+/* Animaciones y Brillos */
+.sparkle { position: fixed; background: #D4AF37; width: 4px; height: 4px; border-radius: 50%; pointer-events: none; opacity: 0.6; }
+@keyframes float { 0% { transform: translateY(0); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-100vh); opacity: 0; } }
 
-.show-animation {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Brillos flotantes */
-@keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-    50% { opacity: 0.8; }
-    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-}
-
-.sparkle {
-    position: fixed;
-    background: radial-gradient(circle, #fcf6ba 0%, rgba(255,255,255,0) 70%);
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Estilo del Contador */
-.countdown {
-    background: rgba(212, 175, 55, 0.1);
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    border: 1px solid #D4AF37;
-}
-
-#timer {
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Playfair Display', serif;
-}
-
-#timer span {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #b38728;
-    display: block;
-}
-
-/* Efecto en tarjetas de información */
-.info-card {
-    transition: transform 0.3s ease;
-    cursor: default;
-}
-
-.info-card:hover {
-    transform: scale(1.05);
-    background: #fff;
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-}
-
-
-#mensaje-personalizado {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 80%;
-    margin: 20px auto;
-    color: #6a6a6a;
-    /* Efecto de desvanecimiento para que combine con tus animaciones */
-    animation: fadeIn 2s ease-in-out;
-}
+.animated { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+.show-animation { opacity: 1; transform: translateY(0); }
