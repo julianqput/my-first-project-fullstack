@@ -1,35 +1,32 @@
-window.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Quitar el cargador después de 2 segundos
-    setTimeout(() => {
-        const loader = document.getElementById('loader');
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 1000);
-    }, 2000);
-
-    // 2. Personalización del Invitado por URL
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Obtener nombre de la URL
     const urlParams = new URLSearchParams(window.location.search);
-    const guestName = urlParams.get('guest') || "Familia Especial";
-    document.getElementById('guest-name').textContent = decodeURIComponent(guestName);
+    let guestName = urlParams.get('guest');
 
-    // 3. Configurar WhatsApp dinámico
-    const phone = "573142748069";
+    if (guestName) {
+        guestName = decodeURIComponent(guestName);
+        document.getElementById('guest-name').innerText = guestName;
+    } else {
+        document.getElementById('guest-name').innerText = "Familia y Amigos";
+    }
+
+    // 2. Configurar WhatsApp
+    const myPhone = "573142748069"; 
     const whatsappBtn = document.getElementById('whatsapp-btn');
-    const text = `¡Hola! Confirmo mi asistencia para ${guestName}. ✨`;
-    whatsappBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    const finalName = guestName || "mi familia";
+    const msg = `¡Hola! Confirmo mi asistencia para ${finalName}. ¡Muchas gracias por la invitación! ✨`;
+    
+    whatsappBtn.href = `https://wa.me/${myPhone}?text=${encodeURIComponent(msg)}`;
 
-    // 4. Efecto de aparición al hacer Scroll
-    const revealElements = document.querySelectorAll('.reveal');
-    const showOnScroll = () => {
-        revealElements.forEach(el => {
-            const windowHeight = window.innerHeight;
-            const elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 100) {
-                el.classList.add('active');
+    // 3. Observador para animaciones
+    const animatedElements = document.querySelectorAll('.animated');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-animation');
             }
         });
-    };
+    }, { threshold: 0.1 });
 
-    window.addEventListener('scroll', showOnScroll);
-    showOnScroll(); // Ejecutar una vez al inicio
+    animatedElements.forEach(el => observer.observe(el));
 });
