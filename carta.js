@@ -1,34 +1,49 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Lógica del nombre y mensaje personalizado
-    // Función para crear la lluvia
-function createRain() {
-    const rainContainer = document.querySelector('.rain-container');
-    const drop = document.createElement('div');
-    
-    drop.classList.add('drop');
-    
-    // Posición aleatoria horizontal
-    drop.style.left = Math.random() * 100 + "vw";
-    
-    // Velocidad aleatoria para que se vea natural (entre 2 y 5 segundos)
-    const duration = Math.random() * 3 + 2;
-    drop.style.animationDuration = duration + "s";
-    
-    // Opacidad aleatoria para dar profundidad
-    drop.style.opacity = Math.random() * 0.5;
+function starAmbientAnimation() {
+    const container = document.getElementById('ambient-particles');
 
-    rainContainer.appendChild(drop);
+    function createParticle(type) {
+        const particle = document.createElement('div');
+        const isPetal = type === 'petal';
+        
+        particle.classList.add(isPetal ? 'petal' : 'sparkle-particle');
+        
+        // Tamaño aleatorio
+        const size = isPetal ? (Math.random() * 15 + 10) : (Math.random() * 6 + 2);
+        particle.style.width = size + 'px';
+        particle.style.height = isPetal ? (size * 1.2) + 'px' : size + 'px';
+        
+        // Posición horizontal aleatoria
+        particle.style.left = Math.random() * 100 + 'vw';
+        
+        // Velocidad aleatoria (Duración entre 6 y 12 segundos para que sea suave)
+        const duration = Math.random() * 6 + 6;
+        particle.style.animationDuration = duration + 's';
+        
+        // Retraso para que no salgan todos a la vez
+        particle.style.animationDelay = Math.random() * 5 + 's';
 
-    // Eliminar la gota después de que termine la animación
-    setTimeout(() => {
-        drop.remove();
-    }, duration * 1000);
+        container.appendChild(particle);
+
+        // Limpieza de memoria
+        setTimeout(() => {
+            particle.remove();
+        }, (duration + 5) * 1000);
+    }
+
+    // Crear 30 pétalos iniciales
+    for(let i = 0; i < 20; i++) {
+        createParticle('petal');
+        createParticle('sparkle');
+    }
+
+    // Seguir creando cada poco tiempo para que sea CONTINUO
+    setInterval(() => createParticle('petal'), 600);
+    setInterval(() => createParticle('sparkle'), 400);
 }
 
-// Crear una gota cada 150 milisegundos (ajusta este número para más o menos lluvia)
-setInterval(createRain, 150);
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Lógica del nombre y mensaje personalizado
 
-    
     const urlParams = new URLSearchParams(window.location.search);
     let guestName = urlParams.get('guest');
     const mensajeTexto = "Hoy comienza un capítulo lleno de magia en mi vida, y no sería lo mismo sin ti. ¡Te espero para celebrar mis XV años en una noche inolvidable!";

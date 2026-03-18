@@ -23,6 +23,8 @@ body {
     margin: 0 auto; 
     padding: 30px 20px; 
     text-align: center;
+    position: relative;
+    z-index: 10; /* Para estar sobre los pétalos si lo deseas, o debajo */
 }
 
 /* 1. Títulos Principales */
@@ -117,7 +119,7 @@ h1 {
     box-shadow: 0 2px 8px rgba(248, 200, 220, 0.3);
 }
 
-/* --- RECUADROS DE INFORMACIÓN (FECHA, LUGAR, ETC.) --- */
+/* --- RECUADROS DE INFORMACIÓN --- */
 .details-grid {
     display: grid;
     grid-template-columns: 1fr; 
@@ -134,7 +136,6 @@ h1 {
 }
 
 .info-card {
-    /* CORRECCIÓN: Fondo rosado ultra-pálido en lugar de amarillo */
     background: rgba(255, 245, 247, 0.9); 
     border: 1.5px solid #F8C8DC; 
     border-radius: 12px;
@@ -145,35 +146,58 @@ h1 {
 
 .info-card:hover {
     transform: translateY(-5px) scale(1.03);
-    border-color: #D4AF37; /* El borde cambia a dorado al tocarlo */
+    border-color: #D4AF37; 
 }
 
 .card-highlight {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    color: #b3889a; /* Color rosa elegante para los datos importantes */
+    color: #b3889a; 
     font-weight: bold;
 }
 
-/* --- BRILLOS Y ANIMACIONES DE SCROLL --- */
-.sparkle { 
-    position: fixed; 
-    background: radial-gradient(circle, #F8C8DC 0%, rgba(255,255,255,0) 70%); 
-    width: 6px; 
-    height: 6px; 
-    border-radius: 50%; 
-    pointer-events: none; 
-    opacity: 0.8; 
-    z-index: 9999;
-    filter: blur(1px); 
+/* --- NUEVA ANIMACIÓN INTENSA: PÉTALOS Y POLVO DE HADAS --- */
+#ambient-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100; /* Para que pasen por encima del contenido */
+    overflow: hidden;
 }
 
-@keyframes float { 
-    0% { transform: translateY(0) scale(0); opacity: 0; } 
-    20% { opacity: 1; }
-    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } 
+.petal {
+    position: absolute;
+    background: linear-gradient(135deg, #f8c8dc 0%, #ffdbed 100%);
+    border-radius: 150% 0 150% 0; /* Forma de pétalo */
+    opacity: 0.7;
+    filter: drop-shadow(0 0 5px rgba(248, 200, 220, 0.3));
+    animation: floatPetal linear infinite;
 }
 
+.sparkle-particle {
+    position: absolute;
+    background: radial-gradient(circle, #D4AF37 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle linear infinite;
+}
+
+@keyframes floatPetal {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(110vh) translateX(100px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* --- ANIMACIONES DE SCROLL (PARA RECUADROS) --- */
 .animated { 
     opacity: 0; 
     transform: translateY(40px) scale(0.95); 
@@ -183,42 +207,4 @@ h1 {
 .show-animation { 
     opacity: 1; 
     transform: translateY(0) scale(1); 
-}
-
-/* --- EFECTO DE LLUVIA SUTIL --- */
-.rain-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Para que no estorbe al hacer clic en botones */
-    z-index: 1; /* Por detrás de los botones pero sobre el fondo */
-    overflow: hidden;
-}
-
-.drop {
-    position: absolute;
-    background: linear-gradient(to bottom, rgba(248, 200, 220, 0) 0%, rgba(212, 175, 55, 0.4) 100%);
-    width: 1px;
-    height: 80px; /* Hilos largos y sutiles */
-    top: -100px;
-    animation: rainFall linear infinite;
-}
-
-@keyframes rainFall {
-    0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.6;
-    }
-    90% {
-        opacity: 0.6;
-    }
-    100% {
-        transform: translateY(110vh) translateX(20px);
-        opacity: 0;
-    }
 }
