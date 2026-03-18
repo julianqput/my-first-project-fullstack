@@ -37,9 +37,17 @@ h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #333; }
 
 .details-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Uno debajo del otro */
-    gap: 15px;
+    grid-template-columns: 1fr; /* Uno debajo del otro en celular */
+    gap: 20px;
     padding: 20px;
+    max-width: 500px; /* Un poco más ancho para acomodar 4 cuadros */
+    margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+    .details-grid {
+        grid-template-columns: 1fr 1fr; /* Se verán 2 filas de 2 cuadros cada una */
+    }
 }
 
 .info-card {
