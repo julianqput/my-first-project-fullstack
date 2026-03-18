@@ -1,71 +1,224 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap');
 
+/* --- ANIMACIÓN GLOBAL DE ENTRADA --- */
+@keyframes pageEntrance {
+    0% { opacity: 0; filter: blur(10px); transform: scale(1.05); }
+    100% { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
 body { 
     font-family: 'Poppins', sans-serif; 
-    background: #fdf2f4; 
+    background: #FFF5F7; 
     margin: 0; padding: 0; 
     overflow-x: hidden;
 }
 
+/* Aplicamos la animación elegante al contenedor principal */
 .container {
-    max-width: 450px; margin: 0 auto; background: white;
-    padding: 30px 20px; text-align: center;
+    animation: pageEntrance 1.8s ease-out;
+    background: #ffffff;
+    border: 2px solid #F8C8DC; 
+    box-shadow: 0 10px 30px rgba(248, 200, 220, 0.3);
+    max-width: 450px; 
+    margin: 0 auto; 
+    padding: 30px 20px; 
+    text-align: center;
 }
 
-h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #333; }
-#guest-name { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: 1.8rem; margin: 10px 0; }
-#mensaje-personalizado { font-size: 0.95rem; color: #666; font-style: italic; padding: 0 15px; }
+/* 1. Títulos Principales */
+h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.5rem; 
+    color: #b3889a; 
+}
 
-.photo-frame { border: 2px solid #D4AF37; padding: 10px; margin: 20px auto; width: 80%; }
-.photo-frame img { width: 100%; display: block; }
+/* 2. Nombre del Invitado */
+#guest-name { 
+    font-family: 'Playfair Display', serif; 
+    color: #D4AF37; 
+    font-size: 2.0rem; 
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(248, 200, 220, 0.5);
+}
 
-.countdown { background: #fffaf0; border: 1px solid #D4AF37; border-radius: 15px; padding: 15px; margin: 20px 0; }
-#timer { display: flex; justify-content: space-around; font-weight: bold; color: #b38728; }
+/* 3. Mensaje Personalizado */
+#mensaje-personalizado { 
+    font-size: 1rem; 
+    color: #7a6b71; 
+    font-style: italic; 
+    padding: 10px 20px;
+    line-height: 1.5;
+}
 
+/* 4. Marco de la Foto */
+.photo-frame { 
+    border: 3px solid #F8C8DC; 
+    outline: 1px solid #D4AF37; 
+    outline-offset: -8px;
+    padding: 15px; 
+    margin: 25px auto; 
+    width: 85%; 
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(248, 200, 220, 0.4);
+}
+
+.photo-frame img { 
+    width: 100%; 
+    display: block; 
+    border-radius: 4px; 
+}
+
+/* 5. Sección de la Cuenta Regresiva */
+.countdown { 
+    background: #FFF5F7; 
+    border: 1.5px solid #F8C8DC; 
+    border-radius: 20px; 
+    padding: 20px; 
+    margin: 25px 0; 
+    box-shadow: inset 0 0 15px rgba(248, 200, 220, 0.2);
+}
+
+#timer { 
+    display: flex; 
+    justify-content: space-around; 
+    font-weight: bold; 
+    color: #b3889a; 
+    font-family: 'Playfair Display', serif;
+}
+
+#timer span {
+    font-size: 1.8rem;
+    display: block;
+    color: #D4AF37; 
+}
+
+/* 6. Botón de Confirmación */
 .btn-confirm { 
-    display: block; background: linear-gradient(to right, #bf953f, #fcf6ba, #aa771c);
-    color: #44340a; text-decoration: none; padding: 15px; border-radius: 50px; 
-    font-weight: bold; margin: 10px 0; text-transform: uppercase; font-size: 0.8rem;
+    background: linear-gradient(135deg, #F8C8DC 0%, #D4AF37 100%);
+    color: #5c4a1a; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+    font-size: 0.85rem;
+    letter-spacing: 1px; 
+    display: block; 
+    padding: 16px; 
+    margin: 15px auto; 
+    width: 85%; 
+    border-radius: 50px; 
+    border: 1px solid rgba(212, 175, 55, 0.3); 
+    box-shadow: 0 4px 15px rgba(248, 200, 220, 0.5);
+    transition: all 0.3s ease; 
+    cursor: pointer;
 }
 
-/* Animaciones y Brillos */
-.sparkle { position: fixed; background: #D4AF37; width: 4px; height: 4px; border-radius: 50%; pointer-events: none; opacity: 0.6; }
-@keyframes float { 0% { transform: translateY(0); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-100vh); opacity: 0; } }
+.btn-confirm:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(248, 200, 220, 0.3);
+}
 
-.animated { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-.show-animation { opacity: 1; transform: translateY(0); }
-
+/* --- RECUADROS DE INFORMACIÓN (FECHA, LUGAR, ETC.) --- */
 .details-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Uno debajo del otro en celular */
+    grid-template-columns: 1fr; 
     gap: 20px;
     padding: 20px;
-    max-width: 500px; /* Un poco más ancho para acomodar 4 cuadros */
+    max-width: 500px; 
     margin: 0 auto;
 }
 
 @media (min-width: 600px) {
     .details-grid {
-        grid-template-columns: 1fr 1fr; /* Se verán 2 filas de 2 cuadros cada una */
+        grid-template-columns: 1fr 1fr; 
     }
 }
 
 .info-card {
-    background: #ffffff;
-    border: 1.5px solid #D4AF37; /* Borde dorado */
+    /* CORRECCIÓN: Fondo rosado ultra-pálido en lugar de amarillo */
+    background: rgba(255, 245, 247, 0.9); 
+    border: 1.5px solid #F8C8DC; 
     border-radius: 12px;
     padding: 15px;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
-    transition: 0.3s;
+    box-shadow: 0 8px 15px rgba(248, 200, 220, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .info-card:hover {
-    transform: scale(1.03); /* Se agranda un poquito al tocarlo */
+    transform: translateY(-5px) scale(1.03);
+    border-color: #D4AF37; /* El borde cambia a dorado al tocarlo */
 }
 
 .card-highlight {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    color: #333;
+    color: #b3889a; /* Color rosa elegante para los datos importantes */
     font-weight: bold;
+}
+
+/* --- BRILLOS Y ANIMACIONES DE SCROLL --- */
+.sparkle { 
+    position: fixed; 
+    background: radial-gradient(circle, #F8C8DC 0%, rgba(255,255,255,0) 70%); 
+    width: 6px; 
+    height: 6px; 
+    border-radius: 50%; 
+    pointer-events: none; 
+    opacity: 0.8; 
+    z-index: 9999;
+    filter: blur(1px); 
+}
+
+@keyframes float { 
+    0% { transform: translateY(0) scale(0); opacity: 0; } 
+    20% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } 
+}
+
+.animated { 
+    opacity: 0; 
+    transform: translateY(40px) scale(0.95); 
+    transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.show-animation { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+}
+
+/* --- EFECTO DE LLUVIA SUTIL --- */
+.rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no estorbe al hacer clic en botones */
+    z-index: 1; /* Por detrás de los botones pero sobre el fondo */
+    overflow: hidden;
+}
+
+.drop {
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(248, 200, 220, 0) 0%, rgba(212, 175, 55, 0.4) 100%);
+    width: 1px;
+    height: 80px; /* Hilos largos y sutiles */
+    top: -100px;
+    animation: rainFall linear infinite;
+}
+
+@keyframes rainFall {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(110vh) translateX(20px);
+        opacity: 0;
+    }
 }
