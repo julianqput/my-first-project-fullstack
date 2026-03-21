@@ -1,0 +1,106 @@
+:root {
+    --bg-color: #fff9e6;
+    --yellow-flower: #ffdb58;
+    --dark-yellow: #f4b400;
+    --romantic-pink: #ff85a1;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+#garden {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.main-container {
+    text-align: center;
+    z-index: 10;
+}
+
+/* --- ESTILO DEL SOBRE --- */
+.envelope-wrapper {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: var(--dark-yellow);
+    margin: 0 auto 50px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.envelope::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 100px solid var(--yellow-flower);
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    transform-origin: top;
+    transition: transform 0.5s 0.3s;
+}
+
+.letter {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: white;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.5s;
+    z-index: 1;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+.text {
+    font-family: 'Dancing Script', cursive;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+/* Animación al abrir */
+.envelope-wrapper.open .envelope::before {
+    transform: rotateX(180deg);
+}
+
+.envelope-wrapper.open .letter {
+    transform: translateY(-100px);
+    z-index: 3;
+}
+
+/* --- BOTÓN --- */
+button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    background-color: var(--dark-yellow);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(244, 180, 0, 0.4);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: var(--yellow-flower);
+}
