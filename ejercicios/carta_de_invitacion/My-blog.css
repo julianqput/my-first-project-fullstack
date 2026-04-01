@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto; /*this part is for central conten´s main */
+}
+
+.navegacion-principal ul {
+  list-style-type: none ;
+}
+
+.navegacion-principal li{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navegacion-principal a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.navegacion-principal a:hover{
+  background-color: #555;
+}
+
+.post{
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  padding: 25px;
+
+}
+
+.post h2{
+  margin-bottom: 10px;
+  font-size: 1.75rem;
+}
+
+/* Esto pone el texto de TODOS los párrafos en color gris */
+p {
+  color: grey;
+}
+
+/* Esto aplica a todo el contenido de la página */
+body {
+  background-color: #f4f4f4; /* Un gris muy claro */
+}
+body {
+  font-family: Arial, sans-serif;
+}
+.destacado {
+  background-color: #fffde7; /* Un fondo amarillo muy pálido */
+  border-left: 4px solid #fbc02d; /* Un borde izquierdo amarillo */
+  padding: 10px; /* Relleno para que no se pegue al borde */
+  margin-top: 10px; /* Separación del elemento de arriba */
+  font-style: italic;
+}
+#logo-principal {
+  font-size: 24px;
+  font-weight: bold;
+  color: #64b5f6; /* Un azul claro */
+  margin-bottom: 10px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Fuente para toda la página */
+  background-color: #f4f4f4; /* Un fondo gris claro */
+  color: #333; /* Color de texto principal oscuro */
+}
+.mi-caja {
+  padding: 20px; /* 20px de relleno en los 4 lados */
+  border: 2px solid black; /* Un borde sólido negro de 2px */
+  margin: 40px; /* 40px de margen en los 4 lados para separarlo de otros */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.alerta {
+  color: red;
+}
+
+#encabezado-principal {
+  background-color: #333;
+}
+
+h1 {
+  color: white;
+  background-color: navy;
+}
+
+article {
+  background-color: white;
+  margin: 20px; /* Margen para separar el artículo del resto */
+  padding: 20px; /* Relleno interno del artículo */
+  border: 1px solid #ddd; /* Un borde sutil */
+}
+
+header, footer {
+  background-color: #333; /* Fondo oscuro para cabecera y pie */
+  color: white; /* Texto blanco */
+  padding: 20px; /* Relleno interno */
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box; /* El cálculo de caja más intuitivo */
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  text-align: justify;
+}
+

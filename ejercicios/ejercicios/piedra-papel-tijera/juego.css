@@ -1,0 +1,242 @@
+/* ==========================================================================
+   1. RESET Y ESTILOS GLOBALES
+   ========================================================================== */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+  scroll-behavior: smooth; /*se utiliza para suvizar saltos de navegacion dentro de la misma pagina*/
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. LAYOUT PRINCIPAL Y CABECERA
+   ========================================================================== */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#logo-principal  {
+     /* MODELO DE CAJA: Usamos padding para crear el recuadro blanco alrededor del logo */
+     /* MODELO DE CAJA: Le damos un fondo blanco para crear el recuadro. */
+    background-color: white;
+
+    /* MODELO DE CAJA: Añadimos un relleno (padding) para crear espacio
+       entre la imagen y el borde del recuadro blanco. */
+    padding: 15px;
+
+    /* Para que el recuadro no ocupe todo el ancho, lo convertimos en un
+       bloque en línea. Así se ajustará al tamaño de la imagen + el padding. */
+    display: inline-block; 
+
+    /* MODELO DE CAJA: Añadimos un margen inferior para separar el recuadro
+       del título que está debajo. */
+    margin-bottom: 20px;
+
+    /* Estilos extra para un look más profesional */
+    border-radius: 12px; /* Esquinas redondeadas para el recuadro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+
+     /* --- AQUÍ APLICAMOS LA ANIMACIÓN --- */
+    animation: bounce 2s ease-in-out infinite;
+}
+
+#logo-principal img{
+    
+    /* MODELO DE CAJA: Controlamos el tamaño de la imagen en sí. */
+    width: 80px;
+
+    /* Esto elimina un pequeño espacio fantasma que a veces aparece debajo de las imágenes. */
+    display: block;
+    
+    /* --- MODIFICACIÓN CLAVE --- */
+    /* Esta es la forma profesional de centrar un elemento de bloque.
+       'auto' en los márgenes izquierdo y derecho le dice al navegador
+       que calcule el espacio sobrante y lo distribuya por igual a cada lado. */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main{
+    max-width: 900px;
+    margin: 30px auto; /* Centra el contenido principal */
+    padding: 0 20px;
+}
+
+.navegacion-principal ul {
+  list-style-type: none ;
+}
+
+.navegacion-principal li{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navegacion-principal a {
+  text-decoration: none;
+  color: white;  /* Corregido: El color debe ser blanco para verse en el fondo oscuro */
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.navegacion-principal a:hover{
+  background-color: #555;
+}
+
+/* ==========================================================================
+   3. COMPONENTES Y SECCIONES
+   ========================================================================== */
+
+/* --- Estilos para los artículos del blog --- */
+
+.post {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 25px;
+}
+
+/* CORRECCIÓN: Regla específica para los títulos dentro de los posts */
+/* Esto asegura que sean oscuros y visibles, sin heredar el color blanco del header */
+
+.post h2,  .post h3 {
+    margin-bottom: 15px;
+    color: white ;
+}
+
+.destacado {
+    background-color: #eef7ff;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+/* --- Estilos para TODAS las imágenes de los artículos --- */
+
+.imagen-articulo {
+    /* MODELO DE CAJA: La base para el tamaño y la apariencia de la imagen */
+    width: 100%; /* Hace que la imagen sea responsiva y ocupe el 100% de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen al cambiar el ancho */
+    margin-top: 15px; /* Espacio para separarla del texto de arriba */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border: 3px solid #eee; /* Un borde sutil */
+}
+
+
+/* --- Organización de los Tipos de detalles de javascript --- */
+
+.detalles {
+    /* CSS GRID: La mejor herramienta para crear una rejilla de 2 dimensiones.
+       Aquí creamos una rejilla con 3 columnas iguales y flexibles (1fr).
+       Grid es perfecto para el layout general de una sección con múltiples elementos. */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Rejilla responsiva */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+   
+}
+
+
+.tipo-card {
+    /* MODELO DE CAJA: Define la apariencia de cada tarjeta individual */
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    /* FLEXBOX: Ideal para alinear el contenido DENTRO de cada tarjeta.
+       Aquí lo usamos para organizar el título, párrafo e imagen en una columna
+       y para que ocupen todo el alto de la tarjeta. */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Distribuye el espacio verticalmente */
+}
+
+.tipo-card h4 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+/* --- Sección de "Ejemplos" con la galería de imágenes --- */
+.galeria-ejemplos {
+    /* FLEXBOX: Usamos Flexbox aquí porque solo necesitamos alinear imágenes
+       en una fila y que se ajusten. Es más simple que Grid para este caso. */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes pasen a la siguiente línea */
+    gap: 15px; /* Espacio entre las imágenes */
+}
+
+/* Le decimos a cada imagen dentro de la galería que sea flexible */
+.galeria-ejemplos .imagen-articulo {
+    /* FLEXBOX: 'flex: 1' es un atajo que le dice a cada imagen que crezca
+       para ocupar el espacio disponible. 'min-width' asegura que no se
+       vuelvan demasiado pequeñas. */
+    flex: 1;
+    min-width: 250px;
+}
+
+/* ==========================================================================
+   5. DEFINICIÓN DE LA ANIMACIÓN (KEYFRAMES)
+   ========================================================================== */
+
+/* Aquí creamos la animación llamada "bounce" (rebotar) */
+@keyframes bounce {
+  /* Al principio (0%) y al final (100%) de la animación, el logo está en su posición normal. */
+  0%, 100% {
+    transform: translateY(0);
+  }
+  /* A la mitad (50%) de la animación, el logo se mueve 8 píxeles hacia arriba. */
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================================================
+   6. ESTILOS RESPONSIVE (PARA MÓVILES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* Hacemos que la rejilla de tarjetas sea de 1 sola columna */
+    .tipos-carbohidratos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hacemos que los elementos del menú se apilen verticalmente */
+    .navegacion-principal li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Reducimos el tamaño del logo en móviles */
+    #logo-principal {
+        padding: 10px;
+    }
+    #logo-principal img {
+        width: 60px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
