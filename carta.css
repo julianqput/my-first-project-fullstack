@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap');
+
+/* --- 1. ANIMACIÓN GLOBAL DE ENTRADA --- */
+@keyframes pageEntrance {
+    0% { opacity: 0; filter: blur(10px); transform: scale(1.05); }
+    100% { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: #FFF5F7; 
+    margin: 0; padding: 0; 
+    overflow-x: hidden;
+}
+
+.container {
+    animation: pageEntrance 1.8s ease-out;
+    background: #ffffff;
+    border: 2px solid #F8C8DC; 
+    box-shadow: 0 10px 30px rgba(248, 200, 220, 0.3);
+    max-width: 450px; 
+    margin: 0 auto; 
+    padding: 30px 20px; 
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 2. TÍTULOS Y TEXTOS --- */
+h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.5rem; 
+    color: #b3889a; 
+    margin-bottom: 10px;
+}
+
+#mensaje-personalizado { 
+    font-size: 1.1rem; 
+    color: #7a6b71; 
+    font-style: italic; 
+    padding: 10px 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.invite-text, .action-text {
+    font-size: 0.9rem;
+    color: #b3889a;
+    letter-spacing: 1px;
+}
+
+/* --- 3. MARCO GEOMÉTRICO (Nombre y Foto) --- */
+/* Este estilo crea el efecto de tres rectángulos cruzados (Oro y Rosa) */
+.geometric-frame {
+    position: relative;
+    background: #ffffff;
+    border: 1.5px solid #D4AF37; /* Marco Dorado Central */
+    margin: 40px auto;
+    width: 80%;
+    padding: 20px 10px;
+    z-index: 1;
+}
+
+.geometric-frame::before, 
+.geometric-frame::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Rectángulo Vertical Dorado */
+.geometric-frame::before {
+    top: -10px; left: 6px; right: 6px; bottom: -10px;
+    border: 1px solid #D4AF37;
+}
+
+/* Rectángulo Horizontal Rosado Pastel */
+.geometric-frame::after {
+    top: 6px; left: -10px; right: -10px; bottom: 6px;
+    border: 1.2px solid #F8C8DC;
+}
+
+/* Estilo específico para el texto del invitado dentro del marco */
+#guest-name { 
+    font-family: 'Playfair Display', serif; 
+    color: #7a5a66; /* Rosa viejo profundo para elegancia */
+    font-size: 1.8rem; 
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+/* Ajuste para la foto dentro del marco */
+.photo-frame img { 
+    width: 100%; 
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- 4. CUENTA REGRESIVA --- */
+.countdown { 
+    background: #FFF5F7; 
+    border: 1.5px solid #F8C8DC; 
+    border-radius: 20px; 
+    padding: 20px; 
+    margin: 25px 0; 
+    box-shadow: inset 0 0 15px rgba(248, 200, 220, 0.1);
+}
+
+#timer { 
+    display: flex; 
+    justify-content: space-around; 
+    font-weight: bold; 
+    color: #b3889a; 
+    font-family: 'Playfair Display', serif;
+}
+
+#timer span {
+    font-size: 1.8rem;
+    display: block;
+    color: #d437b2; 
+}
+
+/* --- 5. BOTÓN DE CONFIRMACIÓN --- */
+.btn-confirm { 
+    background: linear-gradient(135deg, #F8C8DC 0%, #D4AF37 100%);
+    color: #5c4a1a; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+    font-size: 0.85rem;
+    letter-spacing: 1px; 
+    display: block; 
+    padding: 18px; 
+    margin: 20px auto; 
+    width: 85%; 
+    border-radius: 50px; 
+    box-shadow: 0 4px 15px rgba(248, 200, 220, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-confirm:active { transform: scale(0.95); }
+
+/* --- 6. ANIMACIONES AMBIENTALES (Pétalos y Sparkles) --- */
+#ambient-particles {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background: linear-gradient(135deg, #f8c8dc 0%, #ffdbed 100%);
+    border-radius: 150% 0 150% 0;
+    opacity: 0.7;
+    animation: floatPetal linear infinite;
+}
+
+@keyframes floatPetal {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    100% { transform: translateY(110vh) translateX(100px) rotate(720deg); opacity: 0; }
+}
+
+.sparkle-particle {
+    position: absolute;
+    background: radial-gradient(circle, #D4AF37 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    animation: twinkle 2s linear infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* --- 7. ANIMACIONES DE SCROLL --- */
+.animated { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s ease-out; 
+}
+
+.show-animation { opacity: 1; transform: translateY(0); }
