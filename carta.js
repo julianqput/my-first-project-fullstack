@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     let guestName = urlParams.get('guest');
     let relation = urlParams.get('rel'); 
-    
 
     const nameElement = document.getElementById('guest-name');
     const messageElement = document.getElementById('mensaje-personalizado');
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "default": "Hoy comienza un capítulo lleno de magia en mi vida, y no sería lo mismo sin ti. ¡Te espero!"
     };
 
-    ///aplicar nombres personalizados
+    // Aplicar Nombre de forma segura y limpiar los signos '+'
     if (guestName) {
         guestName = decodeURIComponent(guestName).replace(/\+/g, ' '); 
         if (nameElement) nameElement.innerText = guestName;
@@ -86,10 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (diff <= 0) return;
 
-        timerElements.d.innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-        timerElements.h.innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        timerElements.m.innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        timerElements.s.innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        // Validar que los elementos existan en el HTML antes de cambiar su texto
+        if(timerElements.d) timerElements.d.innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+        if(timerElements.h) timerElements.h.innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        if(timerElements.m) timerElements.m.innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        if(timerElements.s) timerElements.s.innerText = Math.floor((diff % (1000 * 60)) / 1000);
     };
     setInterval(updateTimer, 1000);
     updateTimer();
