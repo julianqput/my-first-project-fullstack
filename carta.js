@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     let guestName = urlParams.get('guest');
     let relation = urlParams.get('rel'); 
+    
 
     const nameElement = document.getElementById('guest-name');
     const messageElement = document.getElementById('mensaje-personalizado');
@@ -48,15 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
         "default": "Hoy comienza un capítulo lleno de magia en mi vida, y no sería lo mismo sin ti. ¡Te espero!"
     };
 
-    // Aplicar Nombre y Mensaje
+    ///aplicar nombres personalizados
     if (guestName) {
-        guestName = decodeURIComponent(guestName);
-        nameElement.innerText = guestName;
+        guestName = decodeURIComponent(guestName).replace(/\+/g, ' '); 
+        if (nameElement) nameElement.innerText = guestName;
     } else {
         guestName = "Familia y Amigos";
-        nameElement.innerText = guestName;
+        if (nameElement) nameElement.innerText = guestName;
     }
-    messageElement.innerText = mensajes[relation] || mensajes["default"];
+    
+    // Aplicar Mensaje de forma segura
+    if (messageElement) {
+        messageElement.innerText = mensajes[relation] || mensajes["default"];
+    }
 
     // 3. WHATSAPP (Reyes, Monica, Cristina)
     const msgWA = encodeURIComponent(`¡Hola! Soy ${guestName}, confirmo con mucha alegría mi asistencia a los XV de Julieth. ✨`);
